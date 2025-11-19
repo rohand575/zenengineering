@@ -2,12 +2,14 @@
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Award } from "lucide-react";
+import TiltedCard from "@/components/ui/TiltedCard/TiltedCard";
+import TiltWrapper from "@/components/ui/TiltWrapper";
 
 const team = [
   {
-    name: "Rajesh Kumar",
+    name: "Darshan Shah",
     designation: "CEO & Founder",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
+    image: "/darshan-shah.png",
     bio: "With over 20 years of experience in acoustic and HVAC engineering, Rajesh leads our vision for engineering excellence.",
     isCEO: true
   },
@@ -165,26 +167,35 @@ const About = () => {
 
             {/* CEO Card - Highlighted */}
             {team.filter(member => member.isCEO).map((member) => (
-              <Card key={member.name} className="max-w-4xl mx-auto mb-12 border-2 border-primary shadow-2xl overflow-hidden animate-scale-in">
-                <div className="grid grid-cols-1 md:grid-cols-2">
-                  <div className="aspect-square overflow-hidden">
-                    <img 
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <CardContent className="p-8 flex flex-col justify-center">
-                    <div className="inline-block px-3 py-1 bg-primary text-primary-foreground rounded-full text-xs font-semibold mb-4 w-fit">
-                      CEO
+              <div key={member.name} className="max-w-4xl mx-auto mb-12">
+                <TiltWrapper rotateAmplitude={10} scaleOnHover={1.03}>
+                  <Card className="border-2 border-primary shadow-2xl overflow-hidden animate-scale-in bg-card">
+                    <div className="grid grid-cols-1 md:grid-cols-2">
+                      <div className="aspect-square overflow-hidden">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <CardContent className="p-8 flex flex-col justify-center">
+                        <div className="inline-block px-3 py-1 bg-primary text-primary-foreground rounded-full text-xs font-semibold mb-4 w-fit">
+                          CEO
+                        </div>
+                        <h3 className="text-3xl font-bold mb-2">{member.name}</h3>
+                        <p className="text-primary font-semibold mb-4">
+                          {member.designation}
+                        </p>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {member.bio}
+                        </p>
+                      </CardContent>
                     </div>
-                    <h3 className="text-3xl font-bold mb-2">{member.name}</h3>
-                    <p className="text-primary font-semibold mb-4">{member.designation}</p>
-                    <p className="text-muted-foreground leading-relaxed">{member.bio}</p>
-                  </CardContent>
-                </div>
-              </Card>
+                  </Card>
+                </TiltWrapper>
+              </div>
             ))}
+
 
             {/* Other Team Members */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
