@@ -107,6 +107,24 @@ All colors MUST be HSL.
   background-repeat: no-repeat;
 }
 
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-fade-slide-up {
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+
 @layer utilities {
   .section-padding {
     @apply py-20 md:py-28 lg:py-32;
