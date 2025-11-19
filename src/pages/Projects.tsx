@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -111,7 +111,7 @@ const projects = [
 const Projects = () => {
   return (
     <div className="min-h-screen">
-      <Header />
+      {/* <Header /> */}
       
       <main>
         {/* Hero Section */}

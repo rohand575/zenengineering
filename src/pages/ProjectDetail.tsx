@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -110,7 +110,7 @@ const ProjectDetail = () => {
   if (!project) {
     return (
       <div className="min-h-screen">
-        <Header />
+        {/* <Header /> */}
         <main className="section-padding">
           <div className="container-custom text-center">
             <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
@@ -129,7 +129,7 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      {/* <Header /> */}
       
       <main>
         {/* Hero Section */}

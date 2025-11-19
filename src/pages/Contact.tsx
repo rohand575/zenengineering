@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,7 +10,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 const Contact = () => {
   return (
     <div className="min-h-screen">
-      <Header />
+      {/* <Header /> */}
       <main>
         <section className="relative py-24 bg-gradient-to-br from-foreground to-foreground/90 text-background">
           <div className="container-custom">

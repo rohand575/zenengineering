@@ -63,9 +63,9 @@ const ServicesSection = () => {
       <div className="absolute inset-0 bg-section-bg/20 -z-10"></div>
       <div className="pointer-events-none absolute inset-0 -z-10">
         {/* Image itself */}
-        <div className="h-full w-full bg-[url('/services.jpg')] bg-cover bg-center opacity-20 blur-sm" />
+        <div className="h-full w-full bg-[url('/services.jpg')] bg-cover bg-center opacity-30 blur-xl" />
         {/* Tint overlay to keep everything readable on top */}
-        <div className="absolute inset-0 bg-section-bg/80" />
+        <div className="absolute inset-0 bg-section-bg/50" />
       </div>
 
       <div className="container-custom">
@@ -76,7 +76,7 @@ const ServicesSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Comprehensive Engineering Solutions
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground font-bold text-lg">
             From design to maintenance, we provide end-to-end engineering
             services that ensure optimal performance and longevity.
           </p>
@@ -88,7 +88,12 @@ const ServicesSection = () => {
             return (
               <Card
                 key={service.slug}
-                className="hover-lift border border-border/50 bg-background/90 backdrop-blur-md shadow-lg group cursor-pointer"
+                className="
+                        hover-lift border border-border/50 bg-background/90 backdrop-blur-md
+                        shadow-lg group cursor-pointer
+                        transition-all duration-300
+                        hover:shadow-[0_6px_15px_-2px_rgba(255,150,100,0.35)]
+                      "
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-8">

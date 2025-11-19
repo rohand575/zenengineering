@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Award } from "lucide-react";
@@ -51,7 +51,7 @@ const team = [
 const About = () => {
   return (
     <div className="min-h-screen">
-      <Header />
+      {/* <Header /> */}
       
       <main>
         {/* Hero Section */}

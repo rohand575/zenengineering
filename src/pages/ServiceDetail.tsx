@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -142,7 +142,7 @@ const ServiceDetail = () => {
   if (!service) {
     return (
       <div className="min-h-screen">
-        <Header />
+        {/* <Header /> */}
         <main className="section-padding">
           <div className="container-custom text-center">
             <h1 className="text-4xl font-bold mb-4">Service Not Found</h1>
@@ -161,7 +161,7 @@ const ServiceDetail = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      {/* <Header /> */}
       
       <main>
         {/* Hero Section */}

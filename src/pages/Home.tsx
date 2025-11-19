@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/home/Hero";
 import ServicesSection from "@/components/home/ServicesSection";
@@ -9,7 +9,7 @@ import ClientsSection from "@/components/home/ClientsSection";
 const Home = () => {
   return (
     <div className="min-h-screen">
-      <Header />
+      {/* <Header /> */}
       <main>
         <Hero />
         <ServicesSection />

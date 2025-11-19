@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -83,7 +83,7 @@ const services = [
 const Services = () => {
   return (
     <div className="min-h-screen">
-      <Header />
+      {/* <Header /> */}
       
       <main>
         {/* Hero Section */}
