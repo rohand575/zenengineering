@@ -176,11 +176,14 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="animate-fade-in">
+              <div className="animate-fade-in relative">
+                {/* Decorative border offset */}
+                <div className="absolute top-4 left-4 w-full h-full border-2 border-primary/30 rounded-2xl -z-10"></div>
+                
                 <img
                   src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
                   alt="Team collaboration"
-                  className="rounded-2xl shadow-2xl"
+                  className="rounded-2xl shadow-2xl relative grayscale-[20%] hover:grayscale-0 transition-all duration-500"
                 />
               </div>
             </div>
