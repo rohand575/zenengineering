@@ -1,3 +1,5 @@
+// Navbar.tsx
+
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react"; 
@@ -38,7 +40,7 @@ const Navbar: React.FC = () => {
     >
       <nav className="container mx-auto flex items-center justify-between px-4 md:px-6">
         
-        {/* --- Brand Logo --- */}
+        {/* --- Brand Logo (Modified) --- */}
         <Link
           to="/"
           className="flex items-center gap-3 group"
@@ -54,11 +56,14 @@ const Navbar: React.FC = () => {
 
           <div className="flex flex-col">
             <span className="text-lg font-bold tracking-wider text-white leading-none shadow-black drop-shadow-md">
-              ZEN<span className="text-blue-400"> </span>ENGINEERING
+              ZEN<span className="text-blue-400"> </span>ENGINEERING SOLUTIONS
+              {/* === ADDED REGISTERED TRADEMARK SYMBOL HERE === */}
+              <span className="align-super text-[0.6em] ml-0.5">&reg;</span>
+              {/* ============================================== */}
             </span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-medium mt-1 drop-shadow-md">
+            {/* <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-medium mt-1 drop-shadow-md">
               Industrial Solutions
-            </span>
+            </span> */}
           </div>
         </Link>
 
