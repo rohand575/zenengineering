@@ -1,10 +1,12 @@
 // import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, Eye, Award } from "lucide-react";
+import { Target, Eye, Award, ArrowRight, PlayCircle } from "lucide-react"; 
 import TiltedCard from "@/components/ui/TiltedCard/TiltedCard";
 import TiltWrapper from "@/components/ui/TiltWrapper";
 import { useState, useEffect, useRef } from "react";
+import ShinyText from "@/components/ui/ShinyText/ShinyText";
+import { Button } from "@/components/ui/button"; 
 
 // --- Helper Component for Animation ---
 const CountUp = ({ end, duration = 2000, suffix = "" }: { end: number, duration?: number, suffix?: string }) => {
@@ -48,6 +50,8 @@ const CountUp = ({ end, duration = 2000, suffix = "" }: { end: number, duration?
   return <span ref={ref}>{count}{suffix}</span>;
 };
 
+
+
 const managingPartners = [
   {
     name: "Darshan Shah",
@@ -74,69 +78,116 @@ const About = () => {
     <div className="min-h-screen">
       {/* <Header /> */}
       <main>
-        {/* Hero Section */}
-        <section className="relative py-24 bg-gradient-to-br from-foreground via-foreground/95 to-slate-900 text-background overflow-hidden">
-          {/* subtle background shapes */}
-          <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-            <div className="absolute -top-32 -left-16 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
-            <div className="absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-sky-400/10 blur-[90px]" />
+        {/* Hero Section - Refactored to match Hero.tsx Premium Dark Style */}
+        <section className="relative min-h-[75vh] flex items-center py-24 bg-[#050A14] text-white overflow-hidden">
+          
+          {/* --- LAYER 1: Background Image & Texture --- */}
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            {/* 💡 1. BACKGROUND IMAGE (Placeholder - Ensure file exists at this path) 💡 */}
+            <img
+              src="/about.png" 
+              alt="Team working in an office"
+              className="w-full h-full object-cover opacity-30" // Lowered opacity for the dark theme
+            />
+            
+            {/* Noise Texture Overlay - Adds a 'film grain' premium feel */}
+            <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay" 
+                 style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}} 
+            />
+            {/* Subtle Glow/Spotlight effect behind the text area */}
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/10 blur-[150px] rounded-full mix-blend-screen" />
           </div>
 
-          <div className="container-custom">
-            <div className="max-w-3xl animate-slide-up">
-              {/* badge */}
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 text-primary text-xs font-semibold uppercase tracking-[0.18em] mb-4">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                About Us
-              </span>
+          {/* --- LAYER 2: Content --- */}
+          <div className="container-custom relative z-10">
+            <div className="max-w-4xl">
+              
+              {/* Premium Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-medium text-white/90 mb-8 animate-fade-in shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+                <span className="flex h-2 w-2 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                <span className="tracking-wide text-xs uppercase">Our Legacy & Mission</span>
+              </div>
 
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Engineering Tomorrow&apos;s 
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-                  Solutions
-                </span> Today
+              {/* Headline with Contrast - Adapted from Hero.tsx */}
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 animate-slide-up leading-[1.1] tracking-tight">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-br from-white to-white/60">
+                  Driven By
+                </span>
+                <div className="flex items-baseline gap-3 flex-wrap">
+                  <ShinyText
+                    text="Precision"
+                    speed={4}
+                    disabled={false}
+                    className="text-blue-400 inline-block drop-shadow-[0_0_25px_rgba(59,130,246,0.4)] italic"
+                  />
+                  <span className="font-light text-white/80">and Performance.</span>
+                </div>
               </h1>
 
-              <p className="text-lg md:text-xl text-background/85 leading-relaxed">
+              <p className="text-lg md:text-xl text-slate-300 mb-10 animate-slide-up max-w-2xl leading-relaxed font-light border-l-2 border-blue-500/50 pl-6">
                 For over 15 years, Zen Engineering Solutions has been at the forefront
                 of acoustic and HVAC engineering, delivering exceptional results across India.
               </p>
-            </div>
 
-            {/* stats strip */}
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl animate-fade-in">
-              
-              {/* Stat 1 */}
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md hover:bg-white/10 transition-colors">
-                <p className="text-2xl md:text-3xl font-bold text-primary">
-                  <CountUp end={15} suffix="+" />
-                </p>
-                <p className="text-xs md:text-sm text-background/70">Years of experience</p>
+              {/* Action Area - Copied from Hero.tsx */}
+              <div className="flex flex-col sm:flex-row gap-5 animate-slide-up mb-16">
+                <Button size="lg" className="h-14 px-8 text-base bg-white text-black hover:bg-slate-200 transition-all duration-300 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] font-semibold group">
+                  <a href="/contact" className="flex items-center">
+                    Start Your Project
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+                
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="h-14 px-8 text-base border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 rounded-full"
+                >
+                  <a href="/projects" className="flex items-center">
+                    <PlayCircle className="mr-2 h-5 w-5" />
+                    View Our Journey
+                  </a>
+                </Button>
               </div>
 
-              {/* Stat 2 */}
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md hover:bg-white/10 transition-colors">
-                <p className="text-2xl md:text-3xl font-bold text-primary">
-                  <CountUp end={500} suffix="+" />
-                </p>
-                <p className="text-xs md:text-sm text-background/70">Projects delivered</p>
-              </div>
 
-              {/* Stat 3 */}
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md hover:bg-white/10 transition-colors">
-                <p className="text-2xl md:text-3xl font-bold text-primary">
-                  <CountUp end={200} suffix="+" />
-                </p>
-                <p className="text-xs md:text-sm text-background/70">Happy clients</p>
-              </div>
+              {/* Premium Glass Stats Bar - Refactored from existing stats in About.tsx */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-6 rounded-2xl border border-white/5 bg-white/[0.03] backdrop-blur-sm max-w-full animate-fade-in">
+                
+                {/* Stat 1: Years of experience */}
+                <div className="space-y-1">
+                  <div className="text-3xl md:text-4xl font-bold text-white tracking-tighter">
+                    <CountUp end={15} suffix="+" />
+                  </div>
+                  <div className="text-xs uppercase tracking-widest text-slate-400 font-medium">Years Legacy</div>
+                </div>
+                
+                {/* Stat 2: Projects delivered */}
+                <div className="space-y-1 relative md:before:content-[''] md:before:absolute md:before:-left-3 md:before:top-2 md:before:bottom-2 md:before:w-[1px] md:before:bg-white/10">
+                  <div className="text-3xl md:text-4xl font-bold text-white tracking-tighter">
+                    <CountUp end={500} suffix="+" />
+                  </div>
+                  <div className="text-xs uppercase tracking-widest text-slate-400 font-medium">Projects Delivered</div>
+                </div>
+                
+                {/* Stat 3: Happy clients */}
+                <div className="space-y-1 relative md:before:content-[''] md:before:absolute md:before:-left-3 md:before:top-2 md:before:bottom-2 md:before:w-[1px] md:before:bg-white/10">
+                  <div className="text-3xl md:text-4xl font-bold text-white tracking-tighter">
+                    <CountUp end={200} suffix="+" />
+                  </div>
+                  <div className="text-xs uppercase tracking-widest text-slate-400 font-medium">Happy Clients</div>
+                </div>
 
-              {/* Stat 4 */}
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md hover:bg-white/10 transition-colors">
-                <p className="text-2xl md:text-3xl font-bold text-primary">
-                  <CountUp end={100} suffix="%" />
-                </p>
-                <p className="text-xs md:text-sm text-background/70">Commitment to quality</p>
+                 {/* Stat 4: Commitment to quality */}
+                <div className="space-y-1 relative md:before:content-[''] md:before:absolute md:before:-left-3 md:before:top-2 md:before:bottom-2 md:before:w-[1px] md:before:bg-white/10">
+                  <div className="text-3xl md:text-4xl font-bold text-white tracking-tighter">
+                    <CountUp end={100} suffix="%" />
+                  </div>
+                  <div className="text-xs uppercase tracking-widest text-slate-400 font-medium">Quality Commitment</div>
+                </div>
               </div>
 
             </div>

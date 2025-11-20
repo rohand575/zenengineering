@@ -114,17 +114,30 @@ const Projects = () => {
       {/* <Header /> */}
       
       <main>
-        {/* Hero Section */}
-        <section className="relative py-24 bg-gradient-to-br from-foreground to-foreground/90 text-background overflow-hidden">
-          <div className="container-custom">
+        {/* Hero Section - UPDATED TO MATCH Hero.tsx STYLE */}
+        <section className="relative py-24 bg-[#050A14] text-white overflow-hidden">
+          {/* Subtle Glow/Spotlight effect */}
+          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full mix-blend-screen opacity-50" />
+          
+          <div className="container-custom relative z-10">
             <div className="max-w-3xl animate-slide-up">
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 block">
+              
+              {/* Premium Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-medium text-white/90 mb-6 animate-fade-in shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+                <span className="flex h-2 w-2 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                <span className="tracking-wide text-xs uppercase">Engineering Portfolio</span>
+              </div>
+              
+              <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider mb-2 block">
                 Our Work
               </span>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Featured Projects
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-br from-white to-white/60">
+                Featured Projects & Case Studies
               </h1>
-              <p className="text-xl text-background/90 leading-relaxed">
+              <p className="text-xl text-slate-300 leading-relaxed font-light border-l-2 border-blue-500/50 pl-6">
                 Explore our portfolio of successful engineering projects across commercial, industrial, educational, and residential sectors.
               </p>
             </div>
