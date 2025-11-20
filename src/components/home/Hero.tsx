@@ -84,7 +84,7 @@ const Hero = () => {
                 View Case Studies
               </a>
             </Button>
-          </div>
+          </div>       
 
           {/* Premium Glass Stats Bar */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 p-6 rounded-2xl border border-white/5 bg-white/[0.03] backdrop-blur-sm max-w-3xl animate-fade-in">
