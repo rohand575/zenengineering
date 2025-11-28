@@ -6,7 +6,6 @@ import { ArrowRight } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 
 // --- Configuration Constants ---
-const BACKGROUND_COLOR = "#050A14";
 const ACCENT_COLOR_CLASS = "text-blue-400";
 
 // --- Data Definition ---
@@ -87,17 +86,17 @@ const ProjectPreviewItem = ({
   const isReversed = index % 2 === 1;
   const { ref, isInView } = useInView({ threshold: 0.2 });
 
-  // Premium Card Styling: Glassmorphism, subtle blue shadow on hover
+  // Premium Card Styling: Glassmorphism, compact height
   const cardClasses = `
     overflow-hidden rounded-2xl backdrop-blur-sm
     bg-white/[0.03] border border-white/10
     shadow-2xl shadow-black/30
     transition-all duration-500 ease-out
     ${isInView ? "animate-fade-slide-up" : "opacity-0 translate-y-6"}
-    hover:-translate-y-[3px]
+    hover:-translate-y-[2px]
     hover:border-blue-500/50 
-    hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]
-    md:max-w-[88%] mx-auto
+    hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]
+    md:max-w-[80%] mx-auto
   `;
 
   return (
@@ -105,7 +104,7 @@ const ProjectPreviewItem = ({
       {/* Timeline LONG Vertical Line (Premium dark line) */}
       {index !== 0 && (
         <div
-          className="hidden md:block absolute -top-12 left-1/2 h-12 w-[2px] bg-white/10"
+          className="hidden md:block absolute -top-10 left-1/2 h-10 w-[2px] bg-white/10"
           style={{ transform: "translateX(-50%)" }}
         />
       )}
@@ -122,42 +121,39 @@ const ProjectPreviewItem = ({
           }`}
         >
           {/* IMAGE */}
-          <div className="relative md:w-2/5 h-56 md:h-auto overflow-hidden group">
+          <div className="relative md:w-2/5 h-44 md:h-52 overflow-hidden group">
             <img
               src={project.image}
               alt={project.title}
               className="
                 w-full h-full object-cover 
                 transform-gpu transition-transform duration-700
-                group-hover:scale-[1.08] group-hover:-translate-y-1
+                group-hover:scale-[1.06] group-hover:-translate-y-1
               "
             />
 
             {/* Gradient mask to blend with dark background */}
             <div
-              className={`
-                absolute inset-0 pointer-events-none
-                ${
-                  isReversed
-                    ? `bg-gradient-to-l from-[${BACKGROUND_COLOR}]/90 via-transparent to-transparent`
-                    : `bg-gradient-to-r from-[${BACKGROUND_COLOR}]/90 via-transparent to-transparent`
-                }
-              `}
+              className={`absolute inset-0 pointer-events-none ${
+                isReversed
+                  ? "bg-gradient-to-l from-[#050A14]/90 via-transparent to-transparent"
+                  : "bg-gradient-to-r from-[#050A14]/90 via-transparent to-transparent"
+              }`}
             ></div>
           </div>
 
           {/* CONTENT */}
-          <CardContent className="md:w-3/5 p-6 md:p-8 flex flex-col justify-between">
+          <CardContent className="md:w-3/5 p-5 md:p-6 flex flex-col justify-between">
             <div>
               {/* Meta */}
-              <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
+              <div className="flex items-center gap-2 text-[11px] text-slate-400 mb-2.5">
                 {/* Premium Badge Styling */}
                 <Badge
                   className="
                     bg-blue-500/10 text-blue-400 border border-blue-500/30
                     px-2.5 py-1 text-[11px] rounded-full
                     transition-all duration-300
-                    group-hover:bg-blue-500/20 group-hover:scale-[1.05]
+                    group-hover:bg-blue-500/20 group-hover:scale-[1.03]
                   "
                 >
                   {project.category}
@@ -167,12 +163,12 @@ const ProjectPreviewItem = ({
               </div>
 
               {/* High-contrast Title */}
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                 {project.title}
               </h3>
 
               {/* Lighter Description Text */}
-              <p className="text-[15px] text-slate-400 leading-relaxed">
+              <p className="text-sm md:text-[15px] text-slate-400 leading-relaxed">
                 {project.description}
               </p>
             </div>
@@ -180,15 +176,15 @@ const ProjectPreviewItem = ({
             {/* Premium Link Interaction */}
             <NavLink
               to={`/projects/${project.id}`}
-              className={`${ACCENT_COLOR_CLASS} font-semibold text-sm mt-4 flex items-center gap-2 
+              className={`${ACCENT_COLOR_CLASS} font-semibold text-xs md:text-sm mt-3 flex items-center gap-2 
                          transition-all duration-300 relative self-start group/link`}
             >
               <span className="group-hover/link:text-white transition-colors">
                 View Details
               </span>
-              <ArrowRight 
+              <ArrowRight
                 className="h-4 w-4 transform translate-x-0 group-hover/link:translate-x-1 
-                           transition-transform duration-300" 
+                           transition-transform duration-300"
               />
             </NavLink>
           </CardContent>
@@ -201,54 +197,65 @@ const ProjectPreviewItem = ({
 // --- Main Component: ProjectsPreview ---
 const ProjectsPreview = () => {
   return (
-    <section className={`section-padding relative overflow-hidden bg-[${BACKGROUND_COLOR}]`}>
-      
+    <section className="relative overflow-hidden bg-[#050A14] py-10 md:py-12">
       {/* --- BACKGROUND LAYER: Glow and Noise (Matches ServicesSection & Hero) --- */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Noise Texture Overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" 
-             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}} 
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          }}
         />
-        
+
         {/* Subtle Glow/Spotlight effect */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] 
-                       bg-blue-500/5 blur-[100px] rounded-full mix-blend-screen" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-500/5 blur-[95px] rounded-full mix-blend-screen" />
       </div>
 
       <div className="container-custom relative z-10">
-        {/* Header (Refined to match ServicesSection) */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+        {/* Header (Refined + Compact) */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-5">
           <div>
-            <p className={`${ACCENT_COLOR_CLASS} text-base uppercase tracking-widest mb-3 animate-slide-up`} style={{ animationDelay: '0s' }}>
+            <p
+              className={`${ACCENT_COLOR_CLASS} text-xs md:text-sm uppercase tracking-[0.2em] mb-2 animate-slide-up`}
+              style={{ animationDelay: "0s" }}
+            >
               Portfolio
             </p>
-            <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-4 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-              Featured Projects
+            <h2
+              className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white mb-3 animate-slide-up leading-snug tracking-tight"
+              style={{ animationDelay: "0.08s" }}
+            >
+              Featured Projects & Case Studies
             </h2>
-            <p className="text-slate-300 text-xl font-light max-w-xl animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              Explore some of our most recent HVAC, acoustic, and climate control
-              installations across commercial and industrial sectors.
+            <p
+              className="text-slate-300 text-sm md:text-base font-light max-w-xl animate-slide-up leading-relaxed"
+              style={{ animationDelay: "0.16s" }}
+            >
+              A quick glimpse into HVAC, acoustic, and climate control
+              installations delivered for offices, institutions, and
+              industrial facilities across Maharashtra.
             </p>
           </div>
 
-          {/* Call to Action Button (Matches ServicesSection's outline button style) */}
-          <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Button 
-              size="lg" 
-              variant="outline" 
+          {/* Call to Action Button (slightly smaller for compact feel) */}
+          <div className="animate-fade-in" style={{ animationDelay: "0.24s" }}>
+            <Button
+              size="sm"
+              variant="outline"
               asChild
-              className="h-14 px-8 text-base border-blue-500/20 bg-blue-500/5 backdrop-blur-sm text-white hover:bg-blue-500/10 hover:border-blue-500/30 transition-all duration-300 rounded-full group"
+              className="h-10 md:h-11 px-6 md:px-7 text-xs md:text-sm border-blue-500/20 bg-blue-500/5 backdrop-blur-sm text-white hover:bg-blue-500/10 hover:border-blue-500/30 transition-all duration-300 rounded-full group"
             >
               <NavLink to="/projects">
                 View All Projects
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </NavLink>
             </Button>
           </div>
         </div>
 
-        {/* PROJECT ITEMS */}
-        <div className="space-y-20 relative">
+        {/* PROJECT ITEMS – Reduced vertical spacing */}
+        <div className="space-y-10 md:space-y-12 relative">
           {featuredProjects.map((project, index) => (
             <ProjectPreviewItem key={project.id} project={project} index={index} />
           ))}

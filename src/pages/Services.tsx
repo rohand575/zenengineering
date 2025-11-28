@@ -2,7 +2,7 @@
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Wind, Volume2, Shield, Settings, Wrench, Thermometer, ArrowRight, PlayCircle } from "lucide-react";
+import { Wind, Volume2, Layers, Thermometer, Building2, ArrowRight, PlayCircle } from "lucide-react";
 import { NavLink } from "react-router-dom"; // Assuming you use react-router-dom NavLink/Link
 import ShinyText from "@/components/ui/ShinyText/ShinyText"; // Assuming this utility is available
 import { Helmet } from "react-helmet-async";
@@ -11,63 +11,88 @@ import { Helmet } from "react-helmet-async";
 const services = [
   {
     icon: Volume2,
-    title: "Acoustic Engineering",
-    description: "Advanced sound control solutions for optimal acoustic performance in any environment. We design and implement comprehensive acoustic treatments for offices, auditoriums, recording studios, and industrial facilities.",
-    slug: "acoustic-engineering",
+    title: "Acoustic Insulation & Sound-Proofing",
+    description: "High-performance acoustic solutions for superior sound control and clarity across studios, offices, auditoriums, and government projects. Authorised Dealer for Anutone Acoustic.",
+    slug: "acoustic-insulation-sound-proofing",
     features: [
-      "Sound isolation and absorption",
-      "Noise control solutions",
-      "Acoustic design consultation",
-      "Performance testing and optimization"
+      "Studios and home theatres",
+      "Offices and conference rooms",
+      "Auditoriums and government projects",
+      "Authorised Dealer for Anutone Acoustic"
     ]
   },
   {
     icon: Wind,
-    title: "HVAC Design",
-    description: "Custom heating, ventilation, and air conditioning systems designed for maximum efficiency. Our HVAC solutions ensure optimal climate control while minimizing energy consumption.",
-    slug: "hvac-design",
+    title: "Air Conditioning & Ventilation",
+    description: "Complete HVAC solutions including design, supply, installation, and maintenance across Maharashtra. Authorised Dealer for Daikin.",
+    slug: "air-conditioning-ventilation",
     features: [
-      "Custom system design",
-      "Energy efficiency optimization",
-      "Load calculations",
-      "Equipment selection and specifications"
+      "VRV/VRF systems",
+      "Ductable units and split ACs",
+      "Fresh air and ventilation systems",
+      "Performance-focused maintenance"
     ]
   },
   {
-    icon: Shield,
-    title: "Insulation Services",
-    description: "Premium thermal and acoustic insulation for energy efficiency and comfort. We provide expert installation of advanced insulation materials for walls, ceilings, and ductwork.",
-    slug: "insulation-services",
+    icon: Thermometer,
+    title: "Thermal Insulation",
+    description: "Energy-efficient insulation to reduce heat transfer and improve system performance for commercial, industrial, and residential spaces.",
+    slug: "thermal-insulation",
     features: [
-      "Thermal barrier installation",
-      "Acoustic damping layers",
-      "Industrial pipe and duct insulation",
-      "Material consultation and supply"
+      "Duct insulation",
+      "Pipe insulation",
+      "Roof and wall insulation",
+      "Industrial applications"
     ]
   },
   {
-    icon: Settings,
-    title: "System Maintenance",
-    description: "Proactive maintenance and repair services to keep your HVAC and acoustic systems running at peak performance and efficiency, minimizing downtime and costs.",
-    slug: "system-maintenance",
+    icon: Layers,
+    title: "Ceiling & Interior Systems",
+    description: "Functional and aesthetic ceiling solutions including grid, gypsum, acoustic ceilings, and cloud shapes for a refined finish.",
+    slug: "ceiling-interior-systems",
     features: [
-      "Preventive maintenance contracts",
-      "Emergency repair and diagnostics",
-      "System calibration and tuning",
-      "Filter and component replacement"
+      "Grid ceilings",
+      "Gypsum ceilings",
+      "Acoustic ceilings",
+      "Cloud shapes"
+    ]
+  },
+  {
+    icon: Building2,
+    title: "Specialized Acoustic Rooms",
+    description: "Custom designed and executed acoustic spaces for critical listening, performance, and presentations.",
+    slug: "specialized-acoustic-rooms",
+    features: [
+      "Auditoriums and government halls",
+      "Recording, editing, and dubbing rooms",
+      "Boardrooms",
+      "High-end home theatres"
     ]
   },
 ];
 
+const applicationAreas = [
+  "Residential Homes",
+  "Offices & Commercial Spaces",
+  "Recording Studios",
+  "Home Theatres",
+  "Restaurants & Banquet Halls",
+  "Industrial Units & Warehouses",
+  "Schools & Colleges",
+  "Hospitals & Clinics",
+  "Hotels & Hospitality",
+  "Auditoriums",
+  "Government Projects",
+];
 
 const ServicesHero = () => {
     return (
-        <section className="relative min-h-[75vh] flex items-center py-24 bg-[#050A14] text-white overflow-hidden">
+        <section className="relative min-h-[70vh] md:min-h-[74vh] flex items-center py-20 md:py-24 bg-[#050A14] text-white overflow-hidden">
             
             {/* --- LAYER 1: Background Texture --- */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 {/* Noise Texture Overlay - Matches Hero.tsx */}
-                <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay" 
+                <div className="absolute inset-0 opacity-[0.025] mix-blend-overlay" 
                     style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}} 
                 />
                 {/* Subtle Glow/Spotlight effect - Matches Hero.tsx */}
@@ -79,7 +104,7 @@ const ServicesHero = () => {
                 <div className="max-w-4xl">
                     
                     {/* Premium Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-medium text-white/90 mb-8 animate-fade-in shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs md:text-sm font-medium text-white/90 mb-6 md:mb-7 animate-fade-in shadow-[0_0_15px_rgba(0,0,0,0.3)]">
                         <span className="flex h-2 w-2 relative">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
@@ -88,7 +113,7 @@ const ServicesHero = () => {
                     </div>
 
                     {/* Headline with Contrast - Adapted from Hero.tsx */}
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 animate-slide-up leading-[1.1] tracking-tight">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 md:mb-7 animate-slide-up leading-[1.05] tracking-tight">
                         <span className="block text-transparent bg-clip-text bg-gradient-to-br from-white to-white/60">
                             Engineering
                         </span>
@@ -103,14 +128,13 @@ const ServicesHero = () => {
                         </div>
                     </h1>
 
-                    <p className="text-lg md:text-xl text-slate-300 mb-10 animate-slide-up max-w-2xl leading-relaxed font-light border-l-2 border-blue-500/50 pl-6">
-                        Explore our core competencies in acoustic solutions, HVAC design, 
-                        and system maintenance, each delivered with unmatched precision and quality assurance.
+                    <p className="text-base md:text-lg lg:text-xl text-slate-300 mb-8 md:mb-10 animate-slide-up max-w-3xl leading-relaxed font-light border-l-2 border-blue-500/50 pl-6">
+                        Premium HVAC, acoustic, insulation, and interior solutions from Sangli, Kolhapur, and Pune — engineered for comfort, performance, and dependable execution.
                     </p>
 
                     {/* Action Area */}
-                    <div className="flex flex-col sm:flex-row gap-5 animate-slide-up mb-16">
-                        <Button size="lg" className="h-14 px-8 text-base bg-white text-black hover:bg-slate-200 transition-all duration-300 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] font-semibold group">
+                    <div className="flex flex-col sm:flex-row gap-4 md:gap-5 animate-slide-up mb-12 md:mb-14">
+                        <Button size="lg" className="h-12 md:h-13 px-7 md:px-8 text-base bg-white text-black hover:bg-slate-200 transition-all duration-300 rounded-full shadow-[0_0_16px_rgba(255,255,255,0.25)] font-semibold group">
                             <NavLink to="/contact" className="flex items-center">
                                 Request Consultation
                                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -120,7 +144,7 @@ const ServicesHero = () => {
                         <Button
                             size="lg"
                             variant="outline"
-                            className="h-14 px-8 text-base border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 rounded-full"
+                            className="h-12 md:h-13 px-7 md:px-8 text-base border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 rounded-full"
                         >
                             <NavLink to="/projects" className="flex items-center">
                                 <PlayCircle className="mr-2 h-5 w-5" />
@@ -153,7 +177,7 @@ const Services = () => {
         <title>Services | Zen Engineering Solutions</title>
         <meta
           name="description"
-          content="Explore professional Acoustic Engineering, HVAC Design, Insulation, and System Maintenance services offered by Zen Engineering Solutions. Precision, quality, and industry-grade performance for commercial and industrial projects."
+          content="Explore HVAC, acoustic insulation, thermal insulation, ceiling systems, and specialized acoustic rooms delivered by Zen Engineering Solutions across Maharashtra."
         />
       </Helmet>
 
@@ -230,6 +254,36 @@ const Services = () => {
                   </Card>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* Application Areas Section */}
+        <section className="section-padding bg-[#030712] text-white border-t border-white/5">
+          <div className="container-custom">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-blue-400 font-semibold text-xs tracking-[0.2em] uppercase">
+                Application Areas
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4 text-transparent bg-clip-text bg-gradient-to-br from-white to-white/70">
+                Engineered for Every Environment
+              </h2>
+              <p className="text-slate-400">
+                From residences to mission-critical facilities, we tailor acoustic, HVAC, insulation, and interior systems to the demands of each space.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {applicationAreas.map((area, index) => (
+                <div
+                  key={area}
+                  className="flex items-center gap-3 p-4 rounded-xl border border-white/10 bg-white/5 shadow-lg shadow-black/20"
+                  style={{ animationDelay: `${index * 0.03}s` }}
+                >
+                  <div className="h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.6)]" />
+                  <span className="text-slate-200">{area}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>

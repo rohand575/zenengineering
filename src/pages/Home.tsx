@@ -13,7 +13,7 @@ const Home = () => {
         <title>Zen Engineering Solutions | Acoustic & HVAC Experts</title>
         <meta
           name="description"
-          content="Zen Engineering Solutions provides premium acoustic, HVAC, soundproofing and engineering solutions for commercial and industrial projects."
+          content="Zen Engineering Solutions delivers premium HVAC, acoustic, and insulation services across Maharashtra with authorised Daikin, Anutone Acoustic, and Symphony partnerships."
         />
       </Helmet>
 

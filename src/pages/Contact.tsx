@@ -48,8 +48,8 @@ const Contact = () => {
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Get In <span className={`${ACCENT_COLOR_CLASS} drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]`}>Touch</span>
             </h1>
-            <p className="text-xl text-slate-300 max-w-2xl leading-relaxed font-light">
-              Let's discuss your project requirements. We respond to all inquiries within 24 hours.
+            <p className="text-xl text-slate-300 max-w-3xl leading-relaxed font-light">
+              Reach out for site visits, project consultations, quotations and BOQs, HVAC and acoustic planning, installation, and support services. We respond to all inquiries within 24 hours.
             </p>
           </div>
         </section>
@@ -160,7 +160,32 @@ const Contact = () => {
                       <MapPin className={`h-6 w-6 ${ACCENT_COLOR_CLASS} flex-shrink-0 mt-1`} />
                       <div>
                         <h4 className={`font-semibold mb-1 ${TEXT_LIGHT}`}>Office Locations</h4>
-                        <p className={TEXT_MUTED_DARK}>Pune | Kolhapur | Sangli<br />Maharashtra, India</p>
+                        <div className={`${TEXT_MUTED_DARK} space-y-3`}>
+                          <a
+                            href="https://www.google.com/maps/search/?api=1&query=Flat+No.+001%2C+Shree+Ram+Siddhi+Apartment%2C+100+Feet+Road%2C+near+Chetna+Petrol+Pump%2C+Sangli+416416"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block leading-relaxed hover:text-blue-300 transition-colors"
+                          >
+                            <strong>Sangli (Head Office):</strong> Flat No. 001, Shree Ram Siddhi Apartment, 100 Feet Road, near Chetna Petrol Pump, Sangli - 416416
+                          </a>
+                          <a
+                            href="https://www.google.com/maps/search/?api=1&query=SofX%2C+Below+Bank+of+Baroda%2C+Ruikar+Colony%2C+E-Ward%2C+Kolhapur+416005"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block leading-relaxed hover:text-blue-300 transition-colors"
+                          >
+                            <strong>Kolhapur:</strong> SofX - Below Bank of Baroda, Ruikar Colony, E-Ward, Kolhapur - 416005
+                          </a>
+                          <a
+                            href="https://www.google.com/maps/search/?api=1&query=Trimurti+Bungalow%2C+Unit+No.+2%2C+Plot+No.+38%2C+Gananjay+Housing+Society%2C+Gandhi+Bhavan+Road%2C+Kothrud%2C+Pune+411038"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block leading-relaxed hover:text-blue-300 transition-colors"
+                          >
+                            <strong>Pune:</strong> Trimurti Bungalow, Unit No. 2, Plot No. 38, Gananjay Housing Society, Gandhi Bhavan Road, Kothrud, Pune - 411038
+                          </a>
+                        </div>
                       </div>
                     </div>
                     
@@ -217,6 +242,10 @@ const Contact = () => {
                       className="w-full h-full object-cover opacity-80"
                     />
                 </div>
+
+                <p className="text-slate-300 mt-6">
+                  We&apos;re here to engineer comfort, performance, and long-lasting reliability for your space.
+                </p>
               </div>
             </div>
           </div>

@@ -41,7 +41,7 @@ const Header = () => {
             </a>
           </div>
           <div className="text-muted-foreground">
-            Pune | Kolhapur | Sangli
+            HQ: Sangli | Branches: Kolhapur | Pune
           </div>
         </div>
       </div>

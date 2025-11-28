@@ -93,7 +93,7 @@ const About = () => {
         <title>About Us | Zen Engineering Solutions</title>
         <meta
           name="description"
-          content="Learn about Zen Engineering Solutions, a leading provider of Acoustic and HVAC engineering solutions with 15+ years of experience and 500+ delivered projects across India."
+          content="Zen Engineering Solutions delivers premium HVAC, acoustic, thermal insulation, and ceiling systems across Maharashtra with HQ in Sangli and branches in Kolhapur & Pune."
         />
       </Helmet>
 
@@ -102,7 +102,7 @@ const About = () => {
         {/* =======================================================================================
            1. Hero Section 
            ======================================================================================= */}
-        <section className={`relative min-h-[75vh] flex items-center py-24 bg-[${DARK_BG}] text-white overflow-hidden`}>
+        <section className={`relative min-h-[70vh] md:min-h-[74vh] flex items-center py-20 md:py-24 bg-[${DARK_BG}] text-white overflow-hidden`}>
           
           {/* --- LAYER 1: Background Image & Texture --- */}
           <div className="absolute inset-0 z-0 pointer-events-none">
@@ -110,7 +110,7 @@ const About = () => {
             <img
               src="/about.png" 
               alt="Team working in an office"
-              className="w-full h-full object-cover opacity-30" // Lowered opacity for the dark theme
+              className="w-full h-full object-cover opacity-25" // Lowered opacity for the dark theme
             />
             
             {/* Noise Texture Overlay - Adds a 'film grain' premium feel */}
@@ -133,7 +133,7 @@ const About = () => {
             <div className="max-w-4xl">
               
               {/* Premium Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-medium text-white/90 mb-8 animate-fade-in shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs md:text-sm font-medium text-white/90 mb-6 animate-fade-in shadow-[0_0_15px_rgba(0,0,0,0.3)]">
                 <span className="flex h-2 w-2 relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
@@ -142,7 +142,7 @@ const About = () => {
               </div>
 
               {/* Headline with Contrast - Adapted from Hero.tsx */}
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 animate-slide-up leading-[1.1] tracking-tight">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 md:mb-7 animate-slide-up leading-[1.05] tracking-tight">
                 <span className="block text-transparent bg-clip-text bg-gradient-to-br from-white to-white/60">
                   Driven By
                 </span>
@@ -157,14 +157,13 @@ const About = () => {
                 </div>
               </h1>
 
-              <p className="text-lg md:text-xl text-slate-300 mb-10 animate-slide-up max-w-2xl leading-relaxed font-light border-l-2 border-blue-500/50 pl-6">
-                For over 15 years, Zen Engineering Solutions has been at the forefront
-                of acoustic and HVAC engineering, delivering exceptional results across India.
+              <p className="text-base md:text-lg lg:text-xl text-slate-300 mb-8 md:mb-10 animate-slide-up max-w-3xl leading-relaxed font-light border-l-2 border-blue-500/50 pl-6">
+                Zen Engineering Solutions is a professional engineering services partner for air conditioning, acoustics, thermal insulation, and ceiling systems. With HQ in Sangli and branches in Kolhapur and Pune, we deliver transparent, technically accurate, and long-lasting solutions for residential, commercial, industrial, institutional, and government projects.
               </p>
 
               {/* Action Area - Copied from Hero.tsx */}
-              <div className="flex flex-col sm:flex-row gap-5 animate-slide-up mb-16">
-                <Button size="lg" className="h-14 px-8 text-base bg-white text-black hover:bg-slate-200 transition-all duration-300 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] font-semibold group">
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-5 animate-slide-up mb-12 md:mb-14">
+                <Button size="lg" className="h-12 md:h-13 px-7 md:px-8 text-base bg-white text-black hover:bg-slate-200 transition-all duration-300 rounded-full shadow-[0_0_16px_rgba(255,255,255,0.25)] font-semibold group">
                   <a href="/contact" className="flex items-center">
                     Start Your Project
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -174,7 +173,7 @@ const About = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="h-14 px-8 text-base border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 rounded-full"
+                  className="h-12 md:h-13 px-7 md:px-8 text-base border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 rounded-full"
                 >
                   <a href="/projects" className="flex items-center">
                     <PlayCircle className="mr-2 h-5 w-5" />
@@ -185,11 +184,11 @@ const About = () => {
 
 
               {/* Premium Glass Stats Bar - Refactored from existing stats in About.tsx */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-6 rounded-2xl border border-white/5 bg-white/[0.03] backdrop-blur-sm max-w-full animate-fade-in">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 p-5 md:p-6 rounded-2xl border border-white/5 bg-white/[0.03] backdrop-blur-sm max-w-full animate-fade-in">
                 
                 {/* Stat 1: Years of experience */}
                 <div className="space-y-1">
-                  <div className="text-3xl md:text-4xl font-bold text-white tracking-tighter">
+                  <div className="text-2xl md:text-3xl font-bold text-white tracking-tighter">
                     <CountUp end={15} suffix="+" />
                   </div>
                   <div className="text-xs uppercase tracking-widest text-slate-400 font-medium">Years Legacy</div>
@@ -197,7 +196,7 @@ const About = () => {
                 
                 {/* Stat 2: Projects delivered */}
                 <div className="space-y-1 relative md:before:content-[''] md:before:absolute md:before:-left-3 md:before:top-2 md:before:bottom-2 md:before:w-[1px] md:before:bg-white/10">
-                  <div className="text-3xl md:text-4xl font-bold text-white tracking-tighter">
+                  <div className="text-2xl md:text-3xl font-bold text-white tracking-tighter">
                     <CountUp end={500} suffix="+" />
                   </div>
                   <div className="text-xs uppercase tracking-widest text-slate-400 font-medium">Projects Delivered</div>
@@ -205,7 +204,7 @@ const About = () => {
                 
                 {/* Stat 3: Happy clients */}
                 <div className="space-y-1 relative md:before:content-[''] md:before:absolute md:before:-left-3 md:before:top-2 md:before:bottom-2 md:before:w-[1px] md:before:bg-white/10">
-                  <div className="text-3xl md:text-4xl font-bold text-white tracking-tighter">
+                  <div className="text-2xl md:text-3xl font-bold text-white tracking-tighter">
                     <CountUp end={200} suffix="+" />
                   </div>
                   <div className="text-xs uppercase tracking-widest text-slate-400 font-medium">Happy Clients</div>
@@ -213,7 +212,7 @@ const About = () => {
 
                  {/* Stat 4: Commitment to quality */}
                 <div className="space-y-1 relative md:before:content-[''] md:before:absolute md:before:-left-3 md:before:top-2 md:before:bottom-2 md:before:w-[1px] md:before:bg-white/10">
-                  <div className="text-3xl md:text-4xl font-bold text-white tracking-tighter">
+                  <div className="text-2xl md:text-3xl font-bold text-white tracking-tighter">
                     <CountUp end={100} suffix="%" />
                   </div>
                   <div className="text-xs uppercase tracking-widest text-slate-400 font-medium">Quality Commitment</div>
@@ -258,8 +257,7 @@ const About = () => {
                   </div>
                   <h3 className="text-white text-xl font-semibold mb-3">Our Mission</h3>
                   <p className={`text-sm ${TEXT_MUTED_DARK} leading-relaxed`}>
-                    To deliver cutting-edge engineering solutions that create
-                    comfortable, efficient, and sustainable environments for our clients.
+                    To deliver reliable, efficient, and high-performance HVAC, acoustic, and insulation solutions while maintaining transparency, quality, and customer-focused service.
                   </p>
                 </CardContent>
               </Card>
@@ -272,8 +270,7 @@ const About = () => {
                   </div>
                   <h3 className="text-white text-xl font-semibold mb-3">Our Vision</h3>
                   <p className={`text-sm ${TEXT_MUTED_DARK} leading-relaxed`}>
-                    To be India&apos;s most trusted engineering partner, setting new
-                    standards in acoustic and HVAC excellence.
+                    To be recognized as Maharashtra&apos;s most trusted engineering service provider, known for innovation, dependable execution, and superior workmanship.
                   </p>
                 </CardContent>
               </Card>
@@ -286,8 +283,7 @@ const About = () => {
                   </div>
                   <h3 className="text-white text-xl font-semibold mb-3">Our Values</h3>
                   <p className={`text-sm ${TEXT_MUTED_DARK} leading-relaxed`}>
-                    Excellence, innovation and integrity with an obsession for
-                    long-term client satisfaction.
+                    We combine engineering efficiency with simplicity, professionalism, and unwavering customer satisfaction on every project.
                   </p>
                 </CardContent>
               </Card>
@@ -309,17 +305,17 @@ const About = () => {
                   Our Story
                 </span>
                 <h2 className="text-white text-4xl font-bold mb-6">
-                  Building Excellence Since 2008
+                  Engineering comfort with clear, professional delivery
                 </h2>
                 <div className={`space-y-4 ${TEXT_MUTED_DARK} leading-relaxed`}>
                   <p>
-                    Founded in 2008, Zen Engineering Solutions began with a simple vision: to provide world-class acoustic and HVAC engineering services that transform spaces and improve lives.
+                    Zen Engineering Solutions specializes in HVAC, acoustic insulation, thermal insulation, and ceiling systems designed for comfort, performance, and energy efficiency.
                   </p>
                   <p>
-                    Over the years, we&apos;ve grown from a small team of passionate engineers to one of Maharashtra&apos;s leading engineering firms, serving clients across commercial, educational, industrial, and residential sectors.
+                    Our team handles residential, commercial, industrial, institutional, and government assignments with the same technical rigor, ensuring compliant designs and certified installation standards.
                   </p>
                   <p>
-                    Our commitment to innovation, quality, and customer satisfaction has earned us the trust of over 200 clients and the successful completion of 500+ projects.
+                    We are authorised dealers for Daikin, Anutone Acoustic, and Symphony, so clients receive genuine materials, transparent BOQs, and precise execution across Sangli, Kolhapur, Pune, and beyond.
                   </p>
                 </div>
               </div>

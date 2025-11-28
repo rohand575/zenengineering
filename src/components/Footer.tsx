@@ -129,7 +129,32 @@ const Footer = () => {
                 <div className="mt-1 p-2 rounded-full bg-white/5 border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
                   <MapPin className="h-4 w-4" />
                 </div>
-                <span className="leading-relaxed">Pune | Kolhapur | Sangli<br/>Maharashtra, India</span>
+                <span className="leading-relaxed space-y-2 flex flex-col">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Flat+No.+001%2C+Shree+Ram+Siddhi+Apartment%2C+100+Feet+Road%2C+near+Chetna+Petrol+Pump%2C+Sangli+416416"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-300 transition-colors"
+                  >
+                    <strong>Sangli (Head Office):</strong> Flat No. 001, Shree Ram Siddhi Apartment, 100 Feet Road, near Chetna Petrol Pump, Sangli - 416416
+                  </a>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=SofX%2C+Below+Bank+of+Baroda%2C+Ruikar+Colony%2C+E-Ward%2C+Kolhapur+416005"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-300 transition-colors"
+                  >
+                    <strong>Kolhapur:</strong> SofX - Below Bank of Baroda, Ruikar Colony, E-Ward, Kolhapur - 416005
+                  </a>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Trimurti+Bungalow%2C+Unit+No.+2%2C+Plot+No.+38%2C+Gananjay+Housing+Society%2C+Gandhi+Bhavan+Road%2C+Kothrud%2C+Pune+411038"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-300 transition-colors"
+                  >
+                    <strong>Pune:</strong> Trimurti Bungalow, Unit No. 2, Plot No. 38, Gananjay Housing Society, Gandhi Bhavan Road, Kothrud, Pune - 411038
+                  </a>
+                </span>
               </li>
               
               <li className="flex items-center gap-3 text-sm text-slate-400 group">

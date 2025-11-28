@@ -7,132 +7,116 @@ import { NavLink } from "@/components/NavLink";
 import { ArrowLeft, Check } from "lucide-react";
 
 const serviceDetails: Record<string, any> = {
-  "acoustic-engineering": {
-    title: "Acoustic Engineering",
-    description: "Transform your space with advanced acoustic solutions that create optimal sound environments for work, learning, and entertainment.",
-    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1200&q=80",
-    overview: "Our acoustic engineering services combine cutting-edge technology with years of expertise to deliver superior sound control solutions. Whether you need noise reduction, sound isolation, or acoustic enhancement, our team designs and implements comprehensive solutions tailored to your specific requirements.",
-    features: [
-      "Comprehensive acoustic analysis and testing",
-      "Custom sound absorption and diffusion solutions",
-      "Noise control and vibration isolation",
-      "Acoustic panel design and installation",
-      "Performance optimization and verification",
-      "Compliance with industry standards"
-    ],
-    benefits: [
-      "Improved speech intelligibility",
-      "Enhanced comfort and productivity",
-      "Reduced noise pollution",
-      "Better audio quality for meetings and presentations",
-      "Compliance with building codes and regulations"
-    ]
-  },
-  "hvac-design": {
-    title: "HVAC Design",
-    description: "Energy-efficient heating, ventilation, and air conditioning systems designed for optimal performance and sustainability.",
+  "air-conditioning-ventilation": {
+    title: "Air Conditioning & Ventilation",
+    description:
+      "Complete HVAC solutions including design, supply, installation, and maintenance — backed by authorised Daikin dealership standards.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&q=80",
-    overview: "Our HVAC design services deliver customized climate control solutions that balance comfort, efficiency, and cost-effectiveness. We utilize the latest technology and industry best practices to create systems that meet your specific needs while minimizing environmental impact.",
+    overview:
+      "We deliver end-to-end HVAC systems that balance comfort, efficiency, and reliability. From VRV/VRF design to ductable units, split ACs, and fresh air systems, our engineers size, specify, and commission equipment for consistent performance.",
     features: [
-      "Detailed load calculations and analysis",
-      "Energy-efficient system design",
-      "Equipment selection and specification",
-      "Ductwork and piping design",
-      "Control system integration",
-      "Building information modeling (BIM)"
+      "VRV/VRF system design and execution",
+      "Ductable units and split AC solutions",
+      "Fresh air and ventilation systems",
+      "Load calculations, equipment selection, and BOQs",
+      "Preventive maintenance for peak efficiency",
+      "Authorised Dealer for Daikin",
     ],
     benefits: [
-      "Reduced energy consumption and costs",
-      "Improved indoor air quality",
-      "Enhanced occupant comfort",
-      "Longer equipment lifespan",
-      "Lower maintenance requirements"
-    ]
+      "Energy-efficient climate control",
+      "Balanced airflow and air quality",
+      "Lower lifecycle costs through correct sizing",
+      "Reliable support across Maharashtra",
+      "Certified installation and commissioning",
+    ],
   },
-  "insulation-services": {
-    title: "Insulation Services",
-    description: "Premium insulation solutions for superior thermal and acoustic performance, energy efficiency, and comfort.",
+  "acoustic-insulation-sound-proofing": {
+    title: "Acoustic Insulation & Sound-Proofing",
+    description:
+      "High-performance acoustic solutions for superior sound control and clarity in every environment.",
+    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1200&q=80",
+    overview:
+      "We combine material science with precise detailing to block noise transfer and tune rooms for clarity. From studios to conference halls, our solutions address isolation, reverberation control, and intelligibility.",
+    features: [
+      "Studios and home theatres",
+      "Offices and conference rooms",
+      "Auditoriums and government projects",
+      "Acoustic design, testing, and optimization",
+      "Performance-grade materials and detailing",
+      "Authorised Dealer for Anutone Acoustic",
+    ],
+    benefits: [
+      "Improved speech and audio clarity",
+      "Controlled reverberation and noise transfer",
+      "Application-specific acoustic tuning",
+      "Durable, specification-driven installations",
+      "Certified materials with reliable sourcing",
+    ],
+  },
+  "thermal-insulation": {
+    title: "Thermal Insulation",
+    description:
+      "Energy-efficient insulation to reduce heat transfer and improve system performance across ducts, pipes, roofs, and walls.",
     image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80",
-    overview: "Our insulation services provide comprehensive thermal and acoustic solutions that reduce energy costs, improve comfort, and enhance building performance. We use high-quality materials and proven installation techniques to deliver lasting results.",
+    overview:
+      "Our insulation solutions minimise energy loss and protect systems from thermal stress. We recommend materials based on operating conditions, durability, and compliance requirements for industrial and commercial projects.",
     features: [
-      "Thermal insulation for walls, roofs, and floors",
-      "Acoustic insulation for sound control",
-      "Pipe and duct insulation",
-      "Cold storage insulation",
-      "Fire-resistant insulation materials",
-      "Energy audit and consultation"
+      "Duct insulation for HVAC efficiency",
+      "Pipe insulation for hot and chilled water lines",
+      "Roof and wall insulation",
+      "Industrial and process applications",
+      "Material consultation and BOQs",
     ],
     benefits: [
-      "Significant energy savings",
-      "Improved temperature control",
-      "Reduced noise transmission",
-      "Enhanced structural protection",
-      "Lower carbon footprint"
-    ]
+      "Reduced energy consumption",
+      "Stable temperatures and system longevity",
+      "Lower operating costs",
+      "Condensation and corrosion control",
+      "Improved safety and compliance",
+    ],
   },
-  "installation": {
-    title: "Professional Installation",
-    description: "Expert installation services ensuring your systems are set up correctly for optimal performance and longevity.",
-    image: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1200&q=80",
-    overview: "Our certified technicians provide professional installation services with meticulous attention to detail. We ensure every component is installed correctly, tested thoroughly, and optimized for peak performance.",
+  "ceiling-interior-systems": {
+    title: "Ceiling & Interior Systems",
+    description:
+      "Functional and aesthetic ceiling solutions including grid, gypsum, acoustic ceilings, and cloud shapes.",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
+    overview:
+      "We design and install ceiling systems that integrate acoustics, services, and visual appeal. Each solution is detailed for access, durability, and seamless coordination with HVAC and lighting.",
     features: [
-      "Experienced and certified technicians",
-      "Quality assurance at every stage",
-      "Minimal disruption to operations",
-      "Compliance with safety standards",
-      "Comprehensive testing and commissioning",
-      "Detailed documentation and handover"
+      "Grid ceilings",
+      "Gypsum ceilings",
+      "Acoustic ceilings",
+      "Cloud shapes and feature elements",
+      "Integrated service coordination",
     ],
     benefits: [
-      "Guaranteed quality workmanship",
-      "Faster project completion",
-      "Reduced risk of future issues",
-      "Complete system optimization",
-      "Peace of mind with warranty coverage"
-    ]
+      "Balanced aesthetics and performance",
+      "Improved acoustic comfort",
+      "Neat service integration and access",
+      "Quality finishes with long-term durability",
+    ],
   },
-  "maintenance": {
-    title: "Maintenance Services",
-    description: "Keep your systems running at peak performance with our comprehensive maintenance programs and support services.",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&q=80",
-    overview: "Regular maintenance is essential for ensuring the longevity and efficiency of your engineering systems. Our maintenance services include preventive care, performance monitoring, and emergency support to keep your operations running smoothly.",
+  "specialized-acoustic-rooms": {
+    title: "Specialized Acoustic Rooms",
+    description:
+      "Custom designed and executed acoustic spaces for critical listening, performance, and presentations.",
+    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1200&q=80",
+    overview:
+      "From concept to commissioning, we build bespoke rooms that meet stringent acoustic targets. Detailing covers structure-borne isolation, surface treatments, and HVAC noise control to achieve predictable results.",
     features: [
-      "Scheduled preventive maintenance",
-      "24/7 emergency repair services",
-      "Performance monitoring and optimization",
-      "Parts replacement and upgrades",
-      "Annual maintenance contracts",
-      "Remote diagnostics and support"
+      "Auditoriums and government halls",
+      "Recording studios and control rooms",
+      "Editing and dubbing rooms",
+      "Boardrooms and presentation suites",
+      "High-end home theatres",
     ],
     benefits: [
-      "Extended equipment lifespan",
-      "Reduced unexpected breakdowns",
-      "Lower long-term costs",
-      "Maintained system efficiency",
-      "Priority emergency response"
-    ]
+      "Precisely controlled acoustic environments",
+      "Turnkey delivery with tested performance",
+      "Comfortable HVAC with low noise intrusion",
+      "Single-point accountability from design to install",
+    ],
   },
-  "climate-control": {
-    title: "Climate Control Solutions",
-    description: "Advanced climate control systems that provide precise temperature and humidity management for optimal comfort.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
-    overview: "Our climate control solutions leverage smart technology to create and maintain ideal environmental conditions. From intelligent thermostats to sophisticated building management systems, we deliver solutions that enhance comfort while reducing energy consumption.",
-    features: [
-      "Smart control systems and automation",
-      "Temperature and humidity monitoring",
-      "Energy management and optimization",
-      "Zone-based climate control",
-      "Integration with building systems",
-      "Real-time alerts and diagnostics"
-    ],
-    benefits: [
-      "Precise environmental control",
-      "Reduced energy waste",
-      "Enhanced occupant comfort",
-      "Automated system optimization",
-      "Data-driven insights for improvement"
-    ]
-  }
 };
 
 const ServiceDetail = () => {

@@ -1,5 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Award, Users, Zap, Target } from "lucide-react";
+import {
+  Award,
+  BadgeCheck,
+  Puzzle,
+  ShieldCheck,
+  Receipt,
+  Layers,
+  MapPin,
+} from "lucide-react";
 
 // --- Configuration Constants ---
 const BACKGROUND_COLOR = "#050A14";
@@ -8,24 +16,40 @@ const ACCENT_COLOR_CLASS = "text-blue-400";
 const features = [
   {
     icon: Award,
-    title: "Excellence & Quality",
-    description: "Committed to delivering superior engineering solutions that exceed industry standards."
+    title: "Authorised Dealer",
+    description:
+      "Daikin, Anutone Acoustic, and Symphony partnerships for genuine products and certified standards.",
   },
   {
-    icon: Users,
-    title: "Expert Team",
-    description: "Highly skilled engineers and technicians with extensive industry experience."
+    icon: BadgeCheck,
+    title: "Strong Technical Expertise",
+    description: "Specialists in HVAC, acoustic, thermal insulation, and ceiling systems.",
   },
   {
-    icon: Zap,
-    title: "Innovative Solutions",
-    description: "Cutting-edge technology and methods for efficient and sustainable results."
+    icon: Puzzle,
+    title: "Tailor-Made Engineering",
+    description: "Solutions designed around your site, performance goals, and budget.",
   },
   {
-    icon: Target,
-    title: "On-Time Delivery",
-    description: "Proven track record of completing projects on schedule without compromising quality."
-  }
+    icon: ShieldCheck,
+    title: "Certified Installation",
+    description: "Genuine materials, precise installation, and quality checks at every stage.",
+  },
+  {
+    icon: Receipt,
+    title: "Transparent Pricing",
+    description: "Clear BOQs and quotations so you always know what you are paying for.",
+  },
+  {
+    icon: Layers,
+    title: "End-to-End Execution",
+    description: "Design, supply, installation, and support delivered by one accountable team.",
+  },
+  {
+    icon: MapPin,
+    title: "Maharashtra-Wide Presence",
+    description: "Sangli (HQ) with branches in Kolhapur and Pune for prompt response.",
+  },
 ];
 
 const WhyChooseUs = () => {
@@ -54,7 +78,7 @@ const WhyChooseUs = () => {
             Engineering Excellence You Can Trust
           </h2>
           <p className="text-slate-300 text-xl font-light animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            We combine expertise, innovation, and dedication to deliver exceptional results for every project.
+            Reliable service, genuine materials, and precise installation—every time.
           </p>
         </div>
 
