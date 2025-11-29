@@ -103,11 +103,7 @@ const ClientsSection = () => {
           className="relative mt-10 md:mt-12"  // added more space above
           style={{ perspective: "1400px" }}    // slightly enhanced 3D depth
         >
-          {/* Edge gradients */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-28 md:w-40 bg-gradient-to-r from-[#050A14] to-transparent z-20" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-28 md:w-40 bg-gradient-to-l from-[#050A14] to-transparent z-20" />
-
-          <div className="relative overflow-visible py-6 md:py-8"> 
+          <div className="relative overflow-visible py-6 md:py-8">
             {/* ↑ increased padding so hover does NOT get cut */}
             <motion.div
               className="flex w-max gap-10 md:gap-14 items-center"
