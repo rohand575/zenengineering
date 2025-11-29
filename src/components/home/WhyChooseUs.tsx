@@ -224,9 +224,7 @@ const WhyChooseUs = () => {
             className="text-slate-300 text-sm md:text-base font-light animate-slide-up leading-relaxed"
             style={{ animationDelay: "0.14s" }}
           >
-            From consultation to commissioning, Zen Engineering delivers
-            genuine materials, sound design, and disciplined execution –
-            with one accountable team owning your project end-to-end.
+            From consultation to commissioning, Zen Engineering delivers genuine materials, design, and disciplined execution - with one accountable team owning your project end-to-end.
           </p>
         </div>
 
@@ -247,3 +245,5 @@ const WhyChooseUs = () => {
 };
 
 export default WhyChooseUs;
+
+

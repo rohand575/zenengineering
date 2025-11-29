@@ -96,7 +96,7 @@ const Hero = () => {
           {/* Stats bar ... (unchanged) */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-sm max-w-3xl">
             <div className="flex items-start gap-3">
-              <div className="text-blue-400 text-3xl font-bold">3+</div>
+              <div className="text-blue-400 text-3xl font-bold">3</div>
               <div>
                 <div className="text-sm font-medium text-white">Offices</div>
                 <div className="text-[12px] text-slate-400">Across Maharashtra</div>

@@ -4,35 +4,51 @@ import { motion } from "framer-motion";
 const clients = [
   {
     name: "Shubham Builders",
-    logo: "https://zenengineerings.com/wp-content/uploads/2025/01/Shubham-Builders-Pune-Logo.png",
+    logo: "/Shubham-Builders-Pune-Logo.png",
   },
   {
     name: "Chitale Dairy",
-    logo: "https://zenengineerings.com/wp-content/uploads/2025/01/Chitale-Dairy-Logo.png",
+    logo: "/Chitale-Dairy-Logo.png",
   },
   {
     name: "Panchshil Builders",
-    logo: "https://zenengineerings.com/wp-content/uploads/2025/01/Panchshil-Builders-Logo.png",
+    logo: "/Panchshil-Builders-Logo.png",
   },
   {
     name: "Bharati Vidyapeeth",
-    logo: "https://zenengineerings.com/wp-content/uploads/2025/01/Bharati-Vidhyapeeth-Logo-300x71.png",
+    logo: "/Bharati-Vidhyapeeth-Logo-300x71.png",
   },
   {
-    name: "Indian Army",
-    logo: "https://zenengineerings.com/wp-content/uploads/2025/01/GOI-ARMY-logo.png",
+    name: "MES - Military Engineering Services",
+    logo: "/mes-logo.png",
   },
   {
     name: "CSIBER Kolhapur",
-    logo: "https://zenengineerings.com/wp-content/uploads/2025/01/CSIBER-Kolhapur-India-logo.png",
+    logo: "/CSIBER-Kolhapur-India-logo.png",
   },
   {
     name: "Eleganz Interiors",
-    logo: "https://zenengineerings.com/wp-content/uploads/2025/01/Eleganz-Interior-Ltd-Logo.png",
+    logo: "/Eleganz-Interior-Ltd-Logo.png",
   },
   {
     name: "LES",
-    logo: "https://zenengineerings.com/wp-content/uploads/2025/01/LES-logo.png",
+    logo: "/LES-logo.png",
+  },
+  {
+    name: "Hyundai",
+    logo: "/hyundai.png",
+  },
+  {
+    name: "Patankar Kale Constructions Pvt. Ltd.",
+    logo: "/patankar-kale.png",
+  },
+  {
+    name: "Studio 888",
+    logo: "/studio-888.png",
+  },
+  {
+    name: "Architect Prakash Jadhav",
+    logo: "/prakash-jadhav.png",
   },
 ];
 
@@ -94,11 +110,12 @@ const ClientsSection = () => {
           <div className="relative overflow-visible py-6 md:py-8"> 
             {/* ↑ increased padding so hover does NOT get cut */}
             <motion.div
-              className="flex gap-10 md:gap-14 items-center"
+              className="flex w-max gap-10 md:gap-14 items-center"
               animate={{ x: ["0%", "-50%"] }}
               transition={{
                 repeat: Infinity,
-                duration: 28,
+                repeatType: "loop",
+                duration: 16,
                 ease: "linear",
               }}
             >
@@ -134,8 +151,6 @@ const ClientsSection = () => {
                         max-w-[150px] md:max-w-[190px]
                         h-10 md:h-12
                         object-contain
-                        grayscale opacity-70
-                        hover:grayscale-0 hover:opacity-100
                         transition-all duration-300
                       "
                       loading="lazy"

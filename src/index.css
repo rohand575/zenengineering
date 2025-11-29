@@ -92,7 +92,14 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply font-sans antialiased;
+    background-color: #050A14;
+    color: #e5e7eb;
+  }
+
+  #root {
+    min-height: 100vh;
+    background-color: #050A14;
   }
   
   html {

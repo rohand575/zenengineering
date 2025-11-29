@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, ArrowRight, Twitter } from "lucide-react";
+import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -14,11 +14,11 @@ const Footer = () => {
   ];
 
   const services = [
-    "Acoustic Engineering",
-    "HVAC Design",
-    "Insulation Services",
-    "Installation",
-    "Maintenance",
+    "HVAC - AC & Ventilation",
+    "Acoustic Insulation",
+    "Thermal Insulation",
+    "Ceilings",
+    "Air Cooler System",
   ];
 
   return (
@@ -50,24 +50,29 @@ const Footer = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold tracking-wider text-white leading-none">
-                  ZEN<span className="text-blue-400"> </span>ENGINEERING
+                  ZEN<span className="text-blue-400"> </span>ENGINEERING SOLUTIONS (R)
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-medium mt-1">
-                  Industrial Solutions
+                <span className="text-[10px] uppercase tracking-[0.18em] text-slate-300 font-semibold mt-1">
+                  Engineering Comfort. Delivering Excellence.
                 </span>
               </div>
             </Link>
 
             <p className="text-slate-400 leading-relaxed text-sm pr-4">
-              Delivering excellence through cutting-edge acoustic engineering, HVAC design, insulation, and maintenance services for critical infrastructure.
+              HVAC, acoustic, thermal, ceiling, and air cooler solutions engineered for reliable comfort and performance across Maharashtra.
             </p>
 
             {/* Socials - Glass Buttons */}
             <div className="flex gap-3">
               {[
-                { icon: Facebook, href: "https://facebook.com" },
-                { icon: Instagram, href: "https://instagram.com" },
-                { icon: Linkedin, href: "https://linkedin.com" },
+                {
+                  icon: Instagram,
+                  href: "https://www.instagram.com/zen_engineerings/",
+                },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/company/zen-engineering-solutions/",
+                },
               ].map((social, index) => (
                 <a
                   key={index}
@@ -161,9 +166,26 @@ const Footer = () => {
                 <div className="p-2 rounded-full bg-white/5 border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
                   <Phone className="h-4 w-4" />
                 </div>
-                <a href="tel:+919610029008" className="hover:text-white transition-colors">
-                  +91 96100 29008
-                </a>
+                <div className="flex flex-col leading-relaxed">
+                  <a
+                    href="tel:+919610029008"
+                    className="hover:text-white transition-colors"
+                  >
+                    Pune - +91 96100 29008
+                  </a>
+                  <a
+                    href="tel:+911234567890"
+                    className="hover:text-white transition-colors"
+                  >
+                    Kolhapur - +91-1234567890
+                  </a>
+                  <a
+                    href="tel:+911234567890"
+                    className="hover:text-white transition-colors"
+                  >
+                    Sangli - +91-1234567890
+                  </a>
+                </div>
               </li>
               
               <li className="flex items-center gap-3 text-sm text-slate-400 group">
