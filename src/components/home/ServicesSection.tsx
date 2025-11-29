@@ -1,3 +1,6 @@
+// src/components/home/ServicesSection.tsx
+
+import { useState, MouseEvent } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,13 +13,19 @@ import {
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 
+const ACCENT_COLOR_CLASS = "text-blue-400";
+
 // --- 1. DATA DEFINITION ---
+
+type TextureVariant = "grid" | "diagonal" | "dots" | "radial" | "smooth";
 
 interface Service {
   icon: LucideIcon;
   title: string;
   description: string;
   slug: string;
+  highlight?: boolean;
+  texture: TextureVariant;
 }
 
 const services: Service[] = [
@@ -26,6 +35,7 @@ const services: Service[] = [
     description:
       "High-performance acoustic treatment for offices, studios, conference rooms, and auditoriums (Authorised Anutone Acoustic Dealer).",
     slug: "acoustic-insulation-sound-proofing",
+    texture: "grid",
   },
   {
     icon: Wind,
@@ -33,6 +43,8 @@ const services: Service[] = [
     description:
       "VRV/VRF, ductable, split AC and fresh-air systems — from heat load calculation to design, supply, installation, and AMC (Authorised Daikin Dealer).",
     slug: "air-conditioning-ventilation",
+    highlight: true,
+    texture: "radial",
   },
   {
     icon: Thermometer,
@@ -40,6 +52,7 @@ const services: Service[] = [
     description:
       "Duct, pipe, roof, wall, and process insulation to reduce energy loss and improve system efficiency.",
     slug: "thermal-insulation",
+    texture: "diagonal",
   },
   {
     icon: Layers,
@@ -47,8 +60,19 @@ const services: Service[] = [
     description:
       "Grid, gypsum, and acoustic ceilings with clean, functional detailing for modern interiors.",
     slug: "ceiling-interior-systems",
+    texture: "smooth",
   },
 ];
+
+const textureClassMap: Record<TextureVariant, string> = {
+  grid: "bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.18),_transparent_55%)]",
+  diagonal:
+    "bg-[linear-gradient(135deg,_rgba(148,163,184,0.16)_0%,_rgba(15,23,42,0.1)_45%,_transparent_100%)]",
+  dots: "bg-[radial-gradient(circle,_rgba(148,163,184,0.2)_1px,_transparent_1px)] bg-[length:14px_14px]",
+  radial:
+    "bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.26),_rgba(15,23,42,0.98))]",
+  smooth: "bg-slate-900/70",
+};
 
 // --- 2. 3D MODEL COLUMN (LEFT) ---
 
@@ -90,7 +114,7 @@ const AcousticPanelModel = () => {
   );
 };
 
-// --- 3. SERVICE CARD (RIGHT) ---
+// --- 3. PREMIUM SERVICE CARD (RIGHT) ---
 
 interface ServiceCardProps {
   service: Service;
@@ -98,41 +122,107 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ service, index }: ServiceCardProps) => {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const Icon = service.icon;
+  const textureClass = textureClassMap[service.texture];
 
-  const cardClasses = `
-    border border-white/10 bg-white/[0.03] backdrop-blur-sm
-    shadow-xl shadow-black/30 group cursor-pointer h-full flex flex-col
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 8;
+    setTilt({ x, y });
+  };
+
+  const handleMouseLeave = () => setTilt({ x: 0, y: 0 });
+
+  const baseCardClasses = `
+    group relative h-full cursor-pointer overflow-hidden
+    border border-white/10
+    bg-white/[0.02] backdrop-blur-md
+    shadow-xl shadow-black/40
     transition-all duration-300 ease-out
-    hover:-translate-y-[2px] 
-    hover:border-blue-500/60 
-    hover:shadow-[0_0_26px_rgba(59,130,246,0.22)]
+    hover:border-blue-500/60
+    hover:shadow-[0_0_32px_rgba(59,130,246,0.3)]
+    flex flex-col
     animate-fade-in
   `;
 
-  const cardDelay = `${0.18 + index * 0.05}s`;
+  const highlightClasses = service.highlight
+    ? `
+        border-blue-500/70
+        hover:border-blue-400
+        hover:shadow-[0_0_38px_rgba(59,130,246,0.55)]
+        scale-[1.01] hover:scale-[1.03]
+      `
+    : "";
+
+  const delay = `${0.18 + index * 0.06}s`;
 
   return (
-    <Card className={cardClasses} style={{ animationDelay: cardDelay }}>
-      <CardContent className="p-4 md:p-5 flex flex-col flex-grow">
-        <div
-          className="
-            w-10 h-10 md:w-11 md:h-11 rounded-xl bg-blue-500/10 flex items-center justify-center mb-3 
-            group-hover:bg-blue-500/90 transition-all duration-300 ease-in-out
-            shadow-inner shadow-blue-500/20
-          "
-        >
-          <Icon className="h-5 w-5 text-blue-400 group-hover:text-white transition-colors duration-300" />
+    <Card
+      className={`${baseCardClasses} ${highlightClasses}`}
+      style={{
+        animationDelay: delay,
+        transform: `perspective(900px) rotateX(${-tilt.y}deg) rotateY(${tilt.x}deg)`,
+        transition: "transform 0.18s ease-out",
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Shine sweep overlay */}
+      <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute -inset-[40%] -translate-x-full group-hover:translate-x-[40%] group-hover:animate-card-shine bg-gradient-to-r from-transparent via-white/12 to-transparent" />
+      </div>
+
+      {/* Texture layer */}
+      <div
+        className={`
+          absolute inset-0 opacity-[0.18] mix-blend-screen
+          ${textureClass}
+        `}
+      />
+
+      {/* Extra glow for highlighted service */}
+      {service.highlight && (
+        <div className="absolute -top-20 -right-10 h-40 w-40 rounded-full bg-blue-500/25 blur-3xl mix-blend-screen" />
+      )}
+
+      <CardContent className="relative z-10 p-4 md:p-5 flex flex-col flex-grow">
+        {/* Icon */}
+        <div className="relative mb-3.5">
+          <div
+            className="
+              w-10 h-10 md:w-11 md:h-11 rounded-xl 
+              bg-blue-500/12 group-hover:bg-blue-500/90 
+              flex items-center justify-center
+              transition-all duration-300 ease-in-out
+              shadow-[0_0_0_1px_rgba(148,163,184,0.35)]
+              group-hover:shadow-[0_0_20px_rgba(59,130,246,0.7)]
+            "
+          >
+            <Icon className="h-5 w-5 text-blue-400 group-hover:text-white transition-colors duration-300" />
+          </div>
+
+          {/* floating dot */}
+          <div className="absolute -right-2 top-1 h-2 w-2 rounded-full bg-blue-400/90 shadow-[0_0_12px_rgba(59,130,246,0.9)] animate-pulse" />
         </div>
 
-        <h3 className="text-sm md:text-base font-semibold text-white mb-1.5 group-hover:text-blue-400 transition-colors duration-300">
+        {/* Title */}
+        <h3
+          className="
+            text-sm md:text-base font-semibold text-white mb-1.5
+            group-hover:text-blue-400 transition-colors duration-300
+          "
+        >
           {service.title}
         </h3>
 
-        <p className="text-slate-400 mb-3.5 leading-relaxed flex-grow text-xs md:text-sm">
+        {/* Description */}
+        <p className="text-slate-300/80 mb-3.5 leading-relaxed flex-grow text-xs md:text-sm">
           {service.description}
         </p>
 
+        {/* Learn more link */}
         <NavLink
           to={`/services/${service.slug}`}
           className="
@@ -199,7 +289,7 @@ const ServicesSection = () => {
           </div>
 
           <span
-            className="text-blue-400 font-semibold text-[11px] md:text-xs uppercase tracking-[0.25em] block animate-slide-up"
+            className={`${ACCENT_COLOR_CLASS} font-semibold text-[11px] md:text-xs uppercase tracking-[0.25em] block animate-slide-up`}
             style={{ animationDelay: "0s" }}
           >
             Our Core Services
@@ -235,11 +325,7 @@ const ServicesSection = () => {
           <div className="order-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4.5">
               {services.map((service, index) => (
-                <ServiceCard
-                  key={service.slug}
-                  service={service}
-                  index={index}
-                />
+                <ServiceCard key={service.slug} service={service} index={index} />
               ))}
             </div>
           </div>
