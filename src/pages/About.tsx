@@ -104,6 +104,22 @@ const managingPartners = [
   },
 ];
 
+const coreTeam = [
+  {
+    name: "Saif Mulani",
+    designation: "Project Head - Pune",
+  },
+  {
+    name: "Akash Bhosale",
+    designation: "Project Head - Sangli",
+  },
+  {
+    name: "Omkar Akurdekar",
+    designation: "Project Engineer - Pune",
+  },
+];
+
+
 const About = () => {
   return (
     // Overall page background
@@ -587,7 +603,7 @@ const About = () => {
 
             {/* 2 cards on top */}
             <div className="max-w-5xl mx-auto space-y-9">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+              {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
                 {managingPartners.slice(0, 2).map((member, index) => (
                   <TiltWrapper
                     key={member.name}
@@ -643,10 +659,63 @@ const About = () => {
                     </Card>
                   </TiltWrapper>
                 ))}
+              </div> */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+                {managingPartners.slice(0, 2).map((member, index) => (
+                  <TiltWrapper
+                    key={member.name}
+                    rotateAmplitude={10}
+                    scaleOnHover={1.03}
+                  >
+                    <Card
+                      className={`${GLASS_CARD_BASE} border-2 border-blue-500/30 shadow-2xl shadow-black/40 overflow-hidden animate-scale-in relative`}
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      {/* LinkedIn circular icon in top-right */}
+                      {member.linkedin && member.linkedin !== "#" && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="absolute top-4 right-4 h-9 w-9 rounded-full border border-blue-400/60 bg-black/40 flex items-center justify-center hover:bg-blue-500/20 hover:border-blue-300 transition-colors"
+                        >
+                          <Linkedin className="h-4 w-4 text-blue-300" />
+                        </a>
+                      )}
+
+                      <div className="flex items-center gap-5 p-6 md:p-7">
+                        <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-blue-500/40 shrink-0">
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <div className="inline-block px-3 py-1 bg-blue-500 text-white rounded-full text-[0.65rem] font-semibold mb-2.5">
+                            Managing Partner
+                          </div>
+                          <h3 className="text-white text-lg md:text-xl font-bold mb-1">
+                            {member.name}
+                          </h3>
+                          <p className={`${ACCENT_COLOR_CLASS} font-semibold mb-2`}>
+                            {member.designation}
+                          </p>
+                          <p
+                            className={`leading-relaxed text-sm md:text-[15px] ${TEXT_MUTED_DARK}`}
+                          >
+                            {member.bio}
+                          </p>
+                        </div>
+                      </div>
+                    </Card>
+                  </TiltWrapper>
+                ))}
               </div>
 
+
               {/* 1 card centered below */}
-              <div className="flex justify-center">
+              {/* <div className="flex justify-center">
                 {managingPartners.slice(2, 3).map((member) => (
                   <TiltWrapper
                     key={member.name}
@@ -701,8 +770,101 @@ const About = () => {
                     </Card>
                   </TiltWrapper>
                 ))}
+              </div> */}
+                {/* 1 card centered below */}
+              <div className="flex justify-center">
+                {managingPartners.slice(2, 3).map((member) => (
+                  <TiltWrapper
+                    key={member.name}
+                    rotateAmplitude={10}
+                    scaleOnHover={1.03}
+                  >
+                    <Card
+                      className={`${GLASS_CARD_BASE} border-2 border-blue-500/30 shadow-2xl shadow-black/40 overflow-hidden animate-scale-in max-w-xl w-full relative`}
+                    >
+                      {/* LinkedIn circular icon in top-right */}
+                      {member.linkedin && member.linkedin !== "#" && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="absolute top-4 right-4 h-9 w-9 rounded-full border border-blue-400/60 bg-black/40 flex items-center justify-center hover:bg-blue-500/20 hover:border-blue-300 transition-colors"
+                        >
+                          <Linkedin className="h-4 w-4 text-blue-300" />
+                        </a>
+                      )}
+
+                      <div className="flex items-center gap-5 p-6 md:p-7">
+                        <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-blue-500/40 shrink-0">
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <div className="inline-block px-3 py-1 bg-blue-500 text-white rounded-full text-[0.65rem] font-semibold mb-2.5">
+                            Managing Partner
+                          </div>
+                          <h3 className="text-white text-lg md:text-xl font-bold mb-1">
+                            {member.name}
+                          </h3>
+                          <p className={`${ACCENT_COLOR_CLASS} font-semibold mb-2`}>
+                            {member.designation}
+                          </p>
+                          <p
+                            className={`leading-relaxed text-sm md:text-[15px] ${TEXT_MUTED_DARK}`}
+                          >
+                            {member.bio}
+                          </p>
+                        </div>
+                      </div>
+                    </Card>
+                  </TiltWrapper>
+                ))}
               </div>
-            </div>
+
+                {/* Core team below managing partners */}
+              <div className="mt-14 border-t border-white/10 pt-10">
+                <div className="text-center max-w-2xl mx-auto mb-8">
+                  <h3 className="text-white text-xl md:text-2xl font-semibold mb-2">
+                    Project Heads & Core Team
+                  </h3>
+                  <p className={`text-sm md:text-base ${TEXT_MUTED_DARK}`}>
+                    Supporting the managing partners with on-ground project delivery and
+                    engineering excellence across Pune and Sangli.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                  {coreTeam.map((member) => (
+                    <Card
+                      key={member.name}
+                      className={`${GLASS_CARD_BASE} ${GLASS_CARD_HOVER} text-center`}
+                    >
+                      <CardContent className="p-6 flex flex-col items-center">
+                        {/* Optional placeholder avatar circle */}
+                        <div className="h-14 w-14 rounded-full bg-blue-500/20 border border-blue-500/40 mb-3 flex items-center justify-center text-sm font-semibold text-blue-100">
+                          {member.name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
+                        </div>
+                        <h4 className="text-white font-semibold text-base mb-1">
+                          {member.name}
+                        </h4>
+                        <p className={`${ACCENT_COLOR_CLASS} text-xs font-medium mb-1`}>
+                          {member.designation}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </div> {/* closes max-w-5xl wrapper */}
+          
+            
+            
           </div>
         </section>
       </main>
