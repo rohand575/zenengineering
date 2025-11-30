@@ -91,7 +91,7 @@ const managingPartners = [
   {
     name: "Shrikrishna Ganthade",
     designation: "Managing Partner - Projects",
-    image: "/darshan-shah.png",
+    image: "/krishna.jpg",
     bio: "Oversees project execution and delivery, ensuring quality workmanship and on-time handovers.",
     linkedin: "#",
   },
@@ -108,6 +108,7 @@ const coreTeam = [
   {
     name: "Saif Mulani",
     designation: "Project Head - Pune",
+    image: "/saif.png",
   },
   {
     name: "Akash Bhosale",
@@ -585,8 +586,8 @@ const About = () => {
                       className={`${GLASS_CARD_BASE} border-2 border-blue-500/30 shadow-2xl shadow-black/40 overflow-hidden animate-scale-in`}
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
-                      <div className="flex items-center gap-5 p-6 md:p-7">
-                        <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-blue-500/40 shrink-0">
+                      <div className="flex items-center gap-6 p-7 md:p-8">
+                        <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-blue-500/40 shrink-0">
                           <img
                             src={member.image}
                             alt={member.name}
@@ -693,16 +694,16 @@ const About = () => {
                     rotateAmplitude={10}
                     scaleOnHover={1.03}
                   >
-                    <Card
-                      className={`${GLASS_CARD_BASE} border-2 border-blue-500/30 shadow-2xl shadow-black/40 overflow-hidden animate-scale-in max-w-xl w-full`}
-                    >
-                      <div className="flex items-center gap-5 p-6 md:p-7">
-                        <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-blue-500/40 shrink-0">
-                          <img
-                            src={member.image}
-                            alt={member.name}
-                            className="w-full h-full object-cover"
-                          />
+                  <Card
+                    className={`${GLASS_CARD_BASE} border-2 border-blue-500/30 shadow-2xl shadow-black/40 overflow-hidden animate-scale-in max-w-xl w-full`}
+                  >
+                    <div className="flex items-center gap-6 p-7 md:p-8">
+                      <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-blue-500/40 shrink-0">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
                         </div>
                         <div className="flex-1">
                           <div className="inline-block px-3 py-1 bg-blue-500 text-white rounded-full text-[0.65rem] font-semibold mb-2.5">
@@ -807,24 +808,33 @@ const About = () => {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 max-w-5xl mx-auto">
                   {coreTeam.map((member) => (
                     <Card
                       key={member.name}
                       className={`${GLASS_CARD_BASE} ${GLASS_CARD_HOVER} text-center`}
                     >
-                      <CardContent className="p-6 flex flex-col items-center">
-                        {/* Optional placeholder avatar circle */}
-                        <div className="h-14 w-14 rounded-full bg-blue-500/20 border border-blue-500/40 mb-3 flex items-center justify-center text-sm font-semibold text-blue-100">
-                          {member.name
-                            .split(" ")
-                            .map((n) => n[0])
-                            .join("")}
-                        </div>
-                        <h4 className="text-white font-semibold text-base mb-1">
+                      <CardContent className="p-7 flex flex-col items-center gap-2">
+                        {member.image ? (
+                          <div className="h-16 w-16 md:h-20 md:w-20 rounded-full overflow-hidden border-3 border-blue-500/40 shadow-md mb-1">
+                            <img
+                              src={member.image}
+                              alt={member.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ) : (
+                          <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-sm font-semibold text-blue-100 mb-1">
+                            {member.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
+                          </div>
+                        )}
+                        <h4 className="text-white font-semibold text-lg">
                           {member.name}
                         </h4>
-                        <p className={`${ACCENT_COLOR_CLASS} text-xs font-medium mb-1`}>
+                        <p className={`${ACCENT_COLOR_CLASS} text-sm font-semibold`}>
                           {member.designation}
                         </p>
                       </CardContent>

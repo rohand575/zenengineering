@@ -51,6 +51,10 @@ const clients = [
     name: "Architect Prakash Jadhav",
     logo: "/prakash-jadhav.png",
   },
+  {
+    name: "Parikh Group",
+    logo: "/parikh-logo.png",
+  },
 ];
 
 const ACCENT_COLOR_CLASS = "text-blue-400";
@@ -119,7 +123,7 @@ const ClientsSection = () => {
             <motion.div
               className="flex w-max gap-10 md:gap-14 items-center"
               style={{
-                animation: "clients-marquee 30s linear infinite",
+                animation: "clients-marquee 50s linear infinite",
                 animationPlayState: isPaused ? "paused" : "running",
               }}
               onMouseEnter={() => setIsPaused(true)}
