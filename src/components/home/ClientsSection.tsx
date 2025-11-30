@@ -1,4 +1,5 @@
 // src/components/home/ClientsSection.tsx
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const clients = [
@@ -55,8 +56,17 @@ const clients = [
 const ACCENT_COLOR_CLASS = "text-blue-400";
 
 const ClientsSection = () => {
+  const [isPaused, setIsPaused] = useState(false);
+
   // Duplicate list so we can loop seamlessly (0% -> -50%)
   const repeatedClients = [...clients, ...clients];
+
+  const marqueeAnimation = `
+    @keyframes clients-marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  `;
 
   return (
     <section className="relative overflow-hidden bg-[#050A14] py-10 md:py-12">
@@ -74,6 +84,7 @@ const ClientsSection = () => {
       </div>
 
       <div className="container-custom relative z-10 px-4 md:px-6">
+        <style>{marqueeAnimation}</style>
         {/* Header – medium scale to match other sections */}
         <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10 space-y-3">
           <p
@@ -107,13 +118,12 @@ const ClientsSection = () => {
             {/* ↑ increased padding so hover does NOT get cut */}
             <motion.div
               className="flex w-max gap-10 md:gap-14 items-center"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 16,
-                ease: "linear",
+              style={{
+                animation: "clients-marquee 30s linear infinite",
+                animationPlayState: isPaused ? "paused" : "running",
               }}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
             >
               {repeatedClients.map((client, index) => (
                 <motion.div

@@ -119,6 +119,30 @@ const coreTeam = [
   },
 ];
 
+const journeyTimeline = [
+  {
+    year: "2021",
+    city: "Sangli",
+    headline: "Foundation in Sangli",
+    description:
+      "Our first dedicated office in Sangli became the base for structured MEP and HVAC design services for local builders and institutions.",
+  },
+  {
+    year: "2022",
+    city: "Kolhapur",
+    headline: "Expansion to Kolhapur",
+    description:
+      "We extended operations to Kolhapur, supporting industrial and institutional projects across southern Maharashtra with on-ground engineering support.",
+  },
+  {
+    year: "2023",
+    city: "Pune",
+    headline: "Metro presence in Pune",
+    description:
+      "A new presence in Pune helped us collaborate with larger architects and corporate clients, strengthening our footprint in a fast-growing metro.",
+  },
+];
+
 
 const About = () => {
   return (
@@ -433,146 +457,93 @@ const About = () => {
         {/* =======================================================================================
            4. Timeline / Milestones
            ======================================================================================= */}
+        {/* =======================================================================================
+          4. Journey Timeline
+          ======================================================================================= */}
         <section
           className={`section-padding bg-[${DARK_BG}] border-t ${BORDER_DARK}`}
         >
           <div className="container-custom">
+            {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-10">
               <span
                 className={`${ACCENT_COLOR_CLASS} font-semibold text-xs tracking-[0.2em] uppercase`}
               >
-                Our Journey
+                Journey
               </span>
               <h2 className="text-white text-2xl md:text-3xl font-bold mt-3 mb-3">
-                From a small office to pan-India projects
+                Growing from one city to a tri-city presence
               </h2>
               <p className={TEXT_MUTED_DARK}>
-                Every milestone is a story of a client trusting us with their
-                space — and coming back with the next challenge.
+                Each year added a new city, new challenges and deeper client
+                relationships across western Maharashtra.
               </p>
             </div>
 
-            <div className="relative max-w-4xl mx-auto">
-              {/* vertical line */}
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/20 md:-translate-x-1/2" />
+            {/* Timeline */}
+            <div className="relative max-w-5xl mx-auto">
+              {/* vertical line only on desktop */}
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/15 -translate-x-1/2" />
 
-              <div className="space-y-9">
-                {/* 2008 */}
-                <div className="relative flex md:grid md:grid-cols-2 gap-6 items-start">
-                  <div className="hidden md:block" />
-                  <div className="relative md:pl-8">
-                    <div
-                      className={`absolute -left-[33px] md:-left-10 top-2 h-4 w-4 rounded-full bg-blue-500 border-4 bg-[${DARK_BG}]`}
-                    />
-                    <div
-                      className={`rounded-2xl bg-[${SECONDARY_BG}] shadow-lg border ${BORDER_DARK} p-5`}
-                    >
-                      <p
-                        className={`text-[0.7rem] font-semibold tracking-[0.2em] uppercase ${ACCENT_COLOR_CLASS} mb-1`}
-                      >
-                        2008
-                      </p>
-                      <h3 className="text-white text-base md:text-lg font-semibold mb-1.5">
-                        Zen Engineering is founded in Maharashtra
-                      </h3>
-                      <p
-                        className={`text-sm ${TEXT_MUTED_DARK} leading-relaxed`}
-                      >
-                        Started as a focused acoustic consultancy, serving local
-                        commercial and educational projects.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <div className="space-y-10">
+                {journeyTimeline.map((item, index) => {
+                  const isLeft = index % 2 === 0;
 
-                {/* 2014 */}
-                <div className="relative flex md:grid md:grid-cols-2 gap-6 items-start">
-                  <div className="relative md:pr-8 md:text-right">
+                  return (
                     <div
-                      className={`absolute -left-[33px] md:right-[-2.4rem] top-2 h-4 w-4 rounded-full bg-blue-500 border-4 bg-[${DARK_BG}]`}
-                    />
-                    <div
-                      className={`rounded-2xl bg-[${SECONDARY_BG}] shadow-lg border ${BORDER_DARK} p-5 inline-block text-left md:text-right`}
+                      key={item.year}
+                      className="grid md:grid-cols-[1fr_auto_1fr] gap-8 items-center"
                     >
-                      <p
-                        className={`text-[0.7rem] font-semibold tracking-[0.2em] uppercase ${ACCENT_COLOR_CLASS} mb-1`}
-                      >
-                        2014
-                      </p>
-                      <h3 className="text-white text-base md:text-lg font-semibold mb-1.5">
-                        Full-scale HVAC design services
-                      </h3>
-                      <p
-                        className={`text-sm ${TEXT_MUTED_DARK} leading-relaxed`}
-                      >
-                        Expanded into HVAC engineering with end-to-end design
-                        and execution capabilities for larger facilities.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="hidden md:block" />
-                </div>
+                      {/* Card column */}
+                      <div className={`md:col-span-1 ${isLeft ? "" : "md:order-3"}`}>
+                        <div className="md:max-w-md">
+                          <Card
+                            className={`rounded-2xl bg-[${SECONDARY_BG}] shadow-lg border ${BORDER_DARK} p-5`}
+                          >
+                            <p
+                              className={`text-[0.7rem] font-semibold tracking-[0.2em] uppercase ${ACCENT_COLOR_CLASS} mb-1`}
+                            >
+                              {item.year} • {item.city}
+                            </p>
+                            <h3 className="text-white text-base md:text-lg font-semibold mb-1.5">
+                              {item.headline}
+                            </h3>
+                            <p
+                              className={`text-sm ${TEXT_MUTED_DARK} leading-relaxed`}
+                            >
+                              {item.description}
+                            </p>
+                          </Card>
+                        </div>
+                      </div>
 
-                {/* 2018 */}
-                <div className="relative flex md:grid md:grid-cols-2 gap-6 items-start">
-                  <div className="hidden md:block" />
-                  <div className="relative md:pl-8">
-                    <div
-                      className={`absolute -left-[33px] md:-left-10 top-2 h-4 w-4 rounded-full bg-blue-500 border-4 bg-[${DARK_BG}]`}
-                    />
-                    <div
-                      className={`rounded-2xl bg-[${SECONDARY_BG}] shadow-lg border ${BORDER_DARK} p-5`}
-                    >
-                      <p
-                        className={`text-[0.7rem] font-semibold tracking-[0.2em] uppercase ${ACCENT_COLOR_CLASS} mb-1`}
-                      >
-                        2018
-                      </p>
-                      <h3 className="text-white text-base md:text-lg font-semibold mb-1.5">
-                        Pan-India project footprint
-                      </h3>
-                      <p
-                        className={`text-sm ${TEXT_MUTED_DARK} leading-relaxed`}
-                      >
-                        Delivered complex projects across multiple states,
-                        building a strong reputation in education, healthcare
-                        and commercial spaces.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                      {/* Center dot */}
+                      <div className="flex justify-start md:justify-center items-center md:order-2">
+                        <div className="relative">
+                          <div
+                            className={`
+                              h-4 w-4 rounded-full border-4 bg-[${DARK_BG}]
+                              border-blue-500
+                              shadow-[0_0_0_4px_rgba(37,99,235,0.25)]
+                            `}
+                          />
+                        </div>
+                      </div>
 
-                {/* Today */}
-                <div className="relative flex md:grid md:grid-cols-2 gap-6 items-start">
-                  <div className="relative md:pr-8 md:text-right">
-                    <div
-                      className={`absolute -left-[33px] md:right-[-2.4rem] top-2 h-4 w-4 rounded-full bg-blue-500 border-4 bg-[${DARK_BG}]`}
-                    />
-                    <div
-                      className={`rounded-2xl bg-[${SECONDARY_BG}] shadow-lg border ${BORDER_DARK} p-5 inline-block text-left md:text-right`}
-                    >
-                      <p
-                        className={`text-[0.7rem] font-semibold tracking-[0.2em] uppercase ${ACCENT_COLOR_CLASS} mb-1`}
-                      >
-                        Today
-                      </p>
-                      <h3 className="text-white text-base md:text-lg font-semibold mb-1.5">
-                        Trusted engineering partner for leading brands
-                      </h3>
-                      <p
-                        className={`text-sm ${TEXT_MUTED_DARK} leading-relaxed`}
-                      >
-                        Combining experience with modern tools and simulation to
-                        deliver quiet, comfortable and energy-efficient spaces.
-                      </p>
+                      {/* Empty spacer on desktop to balance the alternating layout */}
+                      <div
+                        className={`hidden md:block md:col-span-1 ${
+                          isLeft ? "md:order-3" : ""
+                        }`}
+                      />
                     </div>
-                  </div>
-                  <div className="hidden md:block" />
-                </div>
+                  );
+                })}
               </div>
             </div>
           </div>
         </section>
+
 
         {/* Separator */}
         <hr className={`border-white/10`} />
