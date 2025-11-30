@@ -126,7 +126,7 @@ const journeyTimeline = [
     city: "Sangli",
     headline: "Foundation in Sangli",
     description:
-      "Our first dedicated office in Sangli became the base for structured MEP and HVAC design services for local builders and institutions.",
+      "Our first dedicated office in Sangli became the headquarters and base for structured HVAC design services for local builders and institutions.",
   },
   {
     year: "2022",
@@ -140,7 +140,7 @@ const journeyTimeline = [
     city: "Pune",
     headline: "Metro presence in Pune",
     description:
-      "A new presence in Pune helped us collaborate with larger architects and corporate clients, strengthening our footprint in a fast-growing metro.",
+      "A new presence in Pune helped us collaborate with larger architects, corporate clients, and government projects, strengthening our footprint in a fast-growing metro.",
   },
 ];
 
