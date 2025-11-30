@@ -7,93 +7,108 @@ import { NavLink } from "@/components/NavLink";
 import { ArrowLeft, Check } from "lucide-react";
 
 const serviceDetails: Record<string, any> = {
+  "acoustic-insulation": {
+    title: "Acoustic Insulation & Sound-Proofing Solutions",
+    description:
+      "Turnkey acoustic solutions using proven Anutone systems—design, drywalls, ceilings, panelling, and soundproofing for every type of space.",
+    image: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=1200&q=80",
+    overview:
+      "We leverage the proven acoustic systems of Anutone Acoustics to deliver turnkey sound control solutions—from design to installation—for all types of spaces.",
+    features: [
+      "Acoustic design and consultancy for room-by-room performance",
+      "Drywalls and partitions with Anutone-certified systems (e.g., Tufbloc)",
+      "Factory-finished acoustic ceilings and wall panelling across finishes",
+      "Soundproofing and noise control for studios, theatres, offices, and public spaces",
+      "Turnkey delivery: planning, drawings, supply, and installation guidance",
+    ],
+    benefits: [
+      "Backed by 50+ years of acoustic system expertise",
+      "Modular, factory-finished solutions that install fast and clean",
+      "Certified performance for fire, water, noise, and durability standards",
+      "One-stop execution without juggling multiple vendors",
+    ],
+  },
   "air-conditioning-ventilation": {
     title: "Air Conditioning & Ventilation",
     description:
-      "Complete HVAC solutions including design, supply, installation, and maintenance — backed by authorised Daikin dealership standards.",
+      "Complete Daikin-powered HVAC: VRV/VRF, ductable ACs, splits, cassette systems, and fresh-air ventilation with certified commissioning.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&q=80",
     overview:
-      "We deliver end-to-end HVAC systems that balance comfort, efficiency, and reliability. From VRV/VRF design to ductable units, split ACs, and fresh air systems, our engineers size, specify, and commission equipment for consistent performance.",
+      "We provide end-to-end HVAC systems designed for comfort, efficiency, and long-term performance. As an authorised Daikin dealer, we handle design, supply, installation, commissioning, and preventive maintenance.",
     features: [
-      "VRV/VRF system design and execution",
-      "Ductable units and split AC solutions",
-      "Fresh air and ventilation systems",
-      "Load calculations, equipment selection, and BOQs",
-      "Preventive maintenance for peak efficiency",
-      "Authorised Dealer for Daikin",
+      "VRV/VRF design with load calculations, drawings, and BOQs",
+      "Ductable ACs, split units, cassette systems, and fresh-air integration",
+      "Balanced airflow, filtration, and ventilation for better indoor air quality",
+      "Certified installation, testing, and commissioning to Daikin standards",
+      "Preventive maintenance and reliable service support across Maharashtra",
     ],
     benefits: [
-      "Energy-efficient climate control",
-      "Balanced airflow and air quality",
-      "Lower lifecycle costs through correct sizing",
-      "Reliable support across Maharashtra",
-      "Certified installation and commissioning",
-    ],
-  },
-  "acoustic-insulation": {
-    title: "Acoustic Insulation",
-    description:
-      "High-performance acoustic solutions for superior sound control and clarity in every environment.",
-    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1200&q=80",
-    overview:
-      "We combine material science with precise detailing to block noise transfer and tune rooms for clarity. From studios to conference halls, our solutions address isolation, reverberation control, and intelligibility.",
-    features: [
-      "Studios and home theatres",
-      "Offices and conference rooms",
-      "Auditoriums and government projects",
-      "Acoustic design, testing, and optimization",
-      "Performance-grade materials and detailing",
-      "Authorised Dealer for Anutone Acoustic",
-    ],
-    benefits: [
-      "Improved speech and audio clarity",
-      "Controlled reverberation and noise transfer",
-      "Application-specific acoustic tuning",
-      "Durable, specification-driven installations",
-      "Certified materials with reliable sourcing",
+      "High energy efficiency with inverter and VRV technology",
+      "Consistent comfort through correct sizing and airflow design",
+      "Lower lifecycle and maintenance costs from right-first-time execution",
+      "Warranty-compliant installation and responsive service",
     ],
   },
   "thermal-insulation": {
     title: "Thermal Insulation",
     description:
-      "Energy-efficient insulation to reduce heat transfer and improve system performance across ducts, pipes, roofs, and walls.",
+      "Energy-efficient insulation for ducts, pipes, roofs, and envelopes using Rockwool, Glasswool, Nitrile Rubber, XLPE, and XPS.",
     image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80",
     overview:
-      "Our insulation solutions minimise energy loss and protect systems from thermal stress. We recommend materials based on operating conditions, durability, and compliance requirements for industrial and commercial projects.",
+      "We design insulation systems to minimise heat transfer, control condensation, and improve efficiency across HVAC, industrial, commercial, and residential applications.",
     features: [
-      "Duct insulation for HVAC efficiency",
-      "Pipe insulation for hot and chilled water lines",
-      "Roof and wall insulation",
-      "Industrial and process applications",
-      "Material consultation and BOQs",
+      "Thermal insulation for supply, return, exhaust, and fresh-air ducts",
+      "Pipe insulation for hot water, chilled water, and process lines",
+      "Roof and wall insulation for residential, commercial, and industrial projects",
+      "Material selection across Rockwool, Glasswool, Nitrile Rubber, XLPE, and XPS",
+      "Detailed routing, BOQs, and skilled installation with vapor barriers and cladding",
     ],
     benefits: [
-      "Reduced energy consumption",
-      "Stable temperatures and system longevity",
-      "Lower operating costs",
-      "Condensation and corrosion control",
-      "Improved safety and compliance",
+      "Reduced energy consumption and heat gain/loss",
+      "Stable operating temperatures and better equipment life",
+      "Lower operating costs with efficient, specification-driven installs",
+      "Condensation and corrosion control for safer, compliant systems",
     ],
   },
   "ceiling-systems": {
-    title: "Ceiling Systems",
+    title: "Ceilings",
     description:
-      "Functional and aesthetic ceiling solutions including grid, gypsum, acoustic ceilings, and cloud shapes.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
+      "Functional and aesthetic ceiling systems: grid, gypsum, acoustic, baffle/cloud, and metal solutions with service-friendly layouts.",
+    image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&q=80",
     overview:
-      "We design and install ceiling systems that integrate acoustics, services, and visual appeal. Each solution is detailed for access, durability, and seamless coordination with HVAC and lighting.",
+      "We design and execute ceiling systems that enhance acoustics, conceal services, and elevate interiors—coordinated with HVAC, electrical, and lighting layouts.",
     features: [
-      "Grid ceilings",
-      "Gypsum ceilings",
-      "Acoustic ceilings",
-      "Cloud shapes and feature elements",
-      "Integrated service coordination",
+      "Grid ceilings, gypsum ceilings, and acoustic ceilings",
+      "Cloud shapes, feature elements, baffle, and metal ceilings",
+      "Service-friendly layouts with clean access points",
+      "Custom designs for residential, commercial, and institutional projects",
     ],
     benefits: [
-      "Balanced aesthetics and performance",
-      "Improved acoustic comfort",
-      "Neat service integration and access",
-      "Quality finishes with long-term durability",
+      "Balanced aesthetics with high-performance functionality",
+      "Enhanced acoustic comfort and neat service integration",
+      "Superior finishing with durable, precise detailing",
+      "Scalable solutions for both large projects and premium residences",
+    ],
+  },
+  "auditorium-home-theatre": {
+    title: "Comprehensive Auditorium & Home Theatre Interior Solutions",
+    description:
+      "Complete interiors for auditoriums, studios, offices, and premium homes—carpets, acoustic doors, stage flooring, seating, and recliners.",
+    image: "https://images.unsplash.com/photo-1455587734955-081b22074882?w=1200&q=80",
+    overview:
+      "We supply and execute specialised interior works with precision materials—from carpets and acoustic doors to stages, auditorium chairs, and recliners—tailored for performance, comfort, and durability.",
+    features: [
+      "Carpets and carpet tiles for offices, hotels, theatres, and home theatres",
+      "High-STC acoustic doors for studios, conference rooms, and auditoriums",
+      "Robust stage flooring for performances and multipurpose halls",
+      "Auditorium chairs with ergonomic, durable, and premium upholstery options",
+      "Motorised and manual recliners with fitting and electrical integration",
+    ],
+    benefits: [
+      "Enhanced acoustic performance and audience comfort",
+      "Premium interiors with durable, long-term finishes",
+      "Customisable designs, colours, and configurations",
+      "One-stop execution for flooring, doors, seating, and finishing works",
     ],
   },
 };

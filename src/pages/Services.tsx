@@ -2,7 +2,7 @@
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Wind, Volume2, Layers, Thermometer, ArrowRight, PlayCircle } from "lucide-react";
+import { Wind, Volume2, Layers, Thermometer, ArrowRight, PlayCircle, Clapperboard } from "lucide-react";
 import { NavLink } from "react-router-dom"; // Assuming you use react-router-dom NavLink/Link
 import ShinyText from "@/components/ui/ShinyText/ShinyText"; // Assuming this utility is available
 import { Helmet } from "react-helmet-async";
@@ -11,50 +11,62 @@ import { Helmet } from "react-helmet-async";
 const services = [
   {
     icon: Volume2,
-    title: "Acoustic Insulation",
-    description: "High-performance acoustic solutions for superior sound control and clarity across studios, offices, auditoriums, and government projects. Authorised Dealer for Anutone Acoustic.",
+    title: "Acoustic Insulation & Sound-Proofing",
+    description: "Turnkey acoustic design and execution using proven Anutone systems—drywalls, ceilings, panelling, and soundproofing for any space.",
     slug: "acoustic-insulation",
     features: [
-      "Studios and home theatres",
-      "Offices and conference rooms",
-      "Auditoriums and government projects",
-      "Authorised Dealer for Anutone Acoustic"
+      "Acoustic design & consultancy",
+      "Drywalls and noise-isolating partitions",
+      "Acoustic ceilings and wall panelling",
+      "Soundproofing for studios, offices, theatres"
     ]
   },
   {
     icon: Wind,
     title: "Air Conditioning & Ventilation",
-    description: "Complete HVAC solutions including design, supply, installation, and maintenance across Maharashtra. Authorised Dealer for Daikin.",
+    description: "Complete Daikin-powered HVAC: VRV/VRF, ductable ACs, splits, cassette systems, and fresh-air ventilation with certified commissioning.",
     slug: "air-conditioning-ventilation",
     features: [
-      "VRV/VRF systems",
-      "Ductable units and split ACs",
-      "Fresh air and ventilation systems",
-      "Performance-focused maintenance"
+      "VRV/VRF design and execution",
+      "Ductable, split, and cassette ACs",
+      "Fresh-air and ventilation systems",
+      "Heat load, sizing, BOQs, and maintenance"
     ]
   },
   {
     icon: Thermometer,
     title: "Thermal Insulation",
-    description: "Energy-efficient insulation to reduce heat transfer and improve system performance for commercial, industrial, and residential spaces.",
+    description: "Energy-efficient insulation for ducts, pipes, roofs, and envelopes using Rockwool, Glasswool, Nitrile Rubber, XLPE, and XPS.",
     slug: "thermal-insulation",
     features: [
-      "Duct insulation",
-      "Pipe insulation",
+      "Duct and pipe insulation",
       "Roof and wall insulation",
-      "Industrial applications"
+      "Industrial/process applications",
+      "Material selection and detailed BOQs"
     ]
   },
   {
     icon: Layers,
-    title: "Ceiling Systems",
-    description: "Functional and aesthetic ceiling solutions including grid, gypsum, acoustic ceilings, and cloud shapes for a refined finish.",
+    title: "Ceilings",
+    description: "Functional and aesthetic ceiling systems: grid, gypsum, acoustic, baffle/cloud, and metal solutions with service-friendly layouts.",
     slug: "ceiling-systems",
     features: [
       "Grid ceilings",
       "Gypsum ceilings",
-      "Acoustic ceilings",
-      "Cloud shapes"
+      "Acoustic ceilings & feature elements",
+      "Metal and baffle/cloud ceilings"
+    ]
+  },
+  {
+    icon: Clapperboard,
+    title: "Auditorium & Home Theatre Interiors",
+    description: "End-to-end interiors for auditoriums, studios, offices, and premium homes—carpets, acoustic doors, stages, seating, and recliners.",
+    slug: "auditorium-home-theatre",
+    features: [
+      "Carpets and carpet tiles",
+      "High-STC acoustic doors",
+      "Stage flooring and finishes",
+      "Auditorium chairs and recliners"
     ]
   },
 ];
