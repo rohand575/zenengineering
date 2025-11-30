@@ -284,7 +284,7 @@ const ServicesSection = () => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
             <span className="tracking-wide uppercase">
-              HVAC · Acoustic · Thermal · Ceilings
+              HVAC · Acoustic · Thermal · Air Cooler · Ceilings
             </span>
           </div>
 
@@ -308,7 +308,7 @@ const ServicesSection = () => {
             className="text-slate-300 text-xs md:text-sm font-light animate-slide-up max-w-2xl mx-auto leading-relaxed"
             style={{ animationDelay: "0.12s" }}
           >
-            Zen Engineering Solutions delivers focused HVAC, acoustic, thermal,
+            Zen Engineering Solutions delivers focused HVAC, acoustic, thermal,air cooler
             and ceiling solutions to make your spaces quieter, cooler, and more
             efficient.
           </p>

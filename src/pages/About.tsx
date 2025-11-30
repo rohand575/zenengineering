@@ -153,7 +153,7 @@ const About = () => {
         <title>About Us | Zen Engineering Solutions</title>
         <meta
           name="description"
-          content="Zen Engineering Solutions delivers premium HVAC, acoustic, thermal, and ceiling solutions across Maharashtra with HQ in Sangli and branches in Kolhapur & Pune."
+          content="Zen Engineering Solutions delivers premium HVAC, acoustic, thermal, Air Cooler and ceiling solutions across Maharashtra with HQ in Sangli and branches in Kolhapur & Pune."
         />
       </Helmet>
 
@@ -226,7 +226,7 @@ const About = () => {
 
               <p className="text-sm md:text-base lg:text-lg text-slate-300 mb-7 md:mb-8 animate-slide-up max-w-3xl leading-relaxed font-light border-l-2 border-blue-500/50 pl-5">
                 Zen Engineering Solutions is a professional engineering services
-                partner for HVAC, acoustic, thermal, and ceiling solutions. With
+                partner for HVAC, acoustic, thermal, Air Cooler and ceiling solutions. With
                 HQ in Sangli and branches in Kolhapur and Pune, we deliver
                 transparent, technically accurate, and long-lasting solutions
                 for residential, commercial, industrial, institutional, and
@@ -342,7 +342,7 @@ const About = () => {
                   <p
                     className={`text-sm ${TEXT_MUTED_DARK} leading-relaxed`}
                   >
-                    To deliver reliable, efficient HVAC, acoustic, thermal, and
+                    To deliver reliable, efficient HVAC, acoustic, thermal,air cooler and
                     ceiling solutions while maintaining transparency, quality,
                     and customer-focused service.
                   </p>
@@ -419,7 +419,7 @@ const About = () => {
                 >
                   <p>
                     Zen Engineering Solutions specializes in HVAC, acoustic,
-                    thermal, and ceiling solutions designed for comfort,
+                    thermal,air cooler and ceiling solutions designed for comfort,
                     performance, and energy efficiency.
                   </p>
                   <p>

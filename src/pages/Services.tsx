@@ -141,7 +141,7 @@ const ServicesHero = () => {
                     </h1>
 
                     <p className="text-base md:text-lg lg:text-xl text-slate-300 mb-8 md:mb-10 animate-slide-up max-w-3xl leading-relaxed font-light border-l-2 border-blue-500/50 pl-6">
-                        Premium HVAC, acoustic, thermal, and ceiling solutions from Sangli, Kolhapur, and Pune - engineered for comfort, performance, and dependable execution.
+                        Premium HVAC, acoustic, thermal, Air Cooler and ceiling solutions from Sangli, Kolhapur, and Pune - engineered for comfort, performance, and dependable execution.
                     </p>
 
                     {/* Action Area */}
@@ -189,7 +189,7 @@ const Services = () => {
         <title>Services | Zen Engineering Solutions</title>
         <meta
           name="description"
-          content="Explore HVAC, acoustic, thermal, and ceiling solutions delivered by Zen Engineering Solutions across Maharashtra."
+          content="Explore HVAC, acoustic, thermal, Air Cooler and ceiling solutions delivered by Zen Engineering Solutions across Maharashtra."
         />
       </Helmet>
 
@@ -281,7 +281,7 @@ const Services = () => {
                 Engineered for Every Environment
               </h2>
               <p className="text-slate-400">
-                From residences to mission-critical facilities, we tailor acoustic, HVAC, thermal, and ceiling systems to the demands of each space.
+                From residences to mission-critical facilities, we tailor acoustic, HVAC, thermal, Air Cooler and ceiling systems to the demands of each space.
               </p>
             </div>
 

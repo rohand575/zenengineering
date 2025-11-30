@@ -232,7 +232,7 @@ const ProjectsPreview = () => {
               className="text-slate-300 text-sm md:text-base font-light max-w-xl animate-slide-up leading-relaxed"
               style={{ animationDelay: "0.16s" }}
             >
-              A quick glimpse into HVAC, acoustic, and climate control
+              A quick glimpse into HVAC, acoustic, thermal and ceilings
               installations delivered for offices, institutions, and
               industrial facilities across Maharashtra.
             </p>
