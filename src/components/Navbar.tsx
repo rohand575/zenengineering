@@ -49,30 +49,42 @@ const Navbar: React.FC = () => {
           {/* Restored the container div.
              Changed size to h-12 w-12 (48px) - "Medium" size.
           */}
-          <div className="
-            relative h-12 w-12 
-            rounded-xl overflow-hidden flex items-center justify-center 
-            bg-gradient-to-br from-blue-500/20 to-transparent 
-            border border-blue-500/30 group-hover:border-blue-400/50 
-            transition-colors
-          ">
-            <img
-              src="/zen-logo.png"
-              alt="Zen Engineering"
-              className="
-                h-7 w-7 
-                object-contain relative z-10 
-                drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]
-                transition-transform duration-300 group-hover:scale-110
-              "
-            />
-          </div>
+        <div
+          className="
+            relative h-14 w-14
+            flex items-center justify-center
+            overflow-hidden
+            rounded-xl
+            bg-white/10 backdrop-blur-md
+            border border-white/20
+            transition-all duration-300
+            group-hover:bg-white/20
+          "
+        >
+          <img
+            src="/zen-logo.png"
+            alt="Zen Engineering"
+            className="
+              h-full w-full
+              object-contain
+              rounded-xl            /* <-- Rounded logo */
+              transition-transform duration-300 group-hover:scale-110
+            "
+          />
+        </div>
+
+
+
 
           <div className="flex flex-col">
-            {/* Text size adjusted to standard large/xl to match the 48px icon */}
-            <span className="text-lg md:text-xl font-bold tracking-wider text-white leading-none shadow-black drop-shadow-md">
-              ZEN<span className="text-blue-400"> </span>ENGINEERING SOLUTIONS
+            <span className="text-lg md:text-xl font-bold tracking-wider text-white leading-none drop-shadow">
+              ZEN ENGINEERING SOLUTIONS
               <span className="align-super text-[0.6em] ml-0.5">&reg;</span>
+            </span>
+
+            {/* Tagline */}
+            <span className="text-xs md:text-sm text-slate-300 tracking-wide mt-0.5">
+              Engineering Comfort. Delivering Excellence.
             </span>
           </div>
         </Link>

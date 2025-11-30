@@ -171,7 +171,7 @@ const Hero = () => {
     />
   </div>
 
-  <div className="w-[80px] h-[28px] flex items-center justify-center">
+  <div className="w-[80px] h-[34px] flex items-center justify-center">
     <img
       src="/symphony-logo.png"
       className="max-h-full max-w-full object-contain"
