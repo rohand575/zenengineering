@@ -1,7 +1,50 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, PlayCircle, CheckCircle2 } from "lucide-react";
 import ShinyText from "@/components/ui/ShinyText/ShinyText";
-import { Link } from "react-router-dom"; // ⬅️ ADD THIS
+import { Link } from "react-router-dom";
+
+// ⬇️ PartnerLogos Component (Enhanced for Readability)
+const PartnerLogos = () => {
+  const partners = [
+    {
+      name: "Daikin",
+      logoSrc: "/daikin-logo.png"
+    },
+    {
+      name: "Anutone",
+      logoSrc: "/anutone-logo.jpeg"
+    },
+    {
+      name: "Symphony",
+      logoSrc: "/symphony-logo.png"
+    },
+  ];
+
+  return (
+    <div className="flex flex-col">
+      <div className="text-sm font-medium text-white mb-2">
+        Authorised Partners
+      </div>
+      <div className="flex items-center space-x-5">
+        {partners.map((partner) => (
+          <div
+            key={partner.name}
+            // INCREASED SIZE (h-7) and FULL OPACITY (opacity-100) for readability
+            className="h-7 opacity-100 hover:scale-105 transition-all duration-300"
+          >
+            <img
+              src={partner.logoSrc}
+              alt={`${partner.name} logo`}
+              // ADDED SUBTLE DROP SHADOW to make the logos pop out
+              className="h-full w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+// ⬆️ END OF PartnerLogos Component
 
 const Hero = () => {
   return (
@@ -93,8 +136,11 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Stats bar ... (unchanged) */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-sm max-w-3xl">
+          {/* Stats bar (THE "GLASS CARD" - STYLES ENHANCED HERE) */}
+          <div
+            className="grid grid-cols-2 md:grid-cols-3 gap-6 p-6 rounded-2xl bg-white/[0.05] border border-white/15 backdrop-blur-lg max-w-4xl shadow-2xl shadow-blue-500/10 transition-all duration-500"
+          >
+            {/* Stat 1: Offices */}
             <div className="flex items-start gap-3">
               <div className="text-blue-400 text-3xl font-bold">3</div>
               <div>
@@ -103,15 +149,13 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="flex items-start gap-3">
-              <div className="text-blue-400 text-3xl font-bold">✓</div>
-              <div>
-                <div className="text-sm font-medium text-white">Authorised Partners</div>
-                <div className="text-[12px] text-slate-400">Daikin · Anutone · Symphony</div>
-              </div>
+            {/* Stat 2: Authorised Partners (Using new Logo component) */}
+            <div className="flex items-start col-span-2 md:col-span-1">
+              <PartnerLogos />
             </div>
-
-            <div className="flex items-start gap-3 col-span-2 md:col-span-1">
+            
+            {/* Stat 3: Reliable Service */}
+            <div className="flex items-start gap-3">
               <div className="text-blue-400 text-3xl font-bold">★</div>
               <div>
                 <div className="text-sm font-medium text-white">Reliable Service</div>
